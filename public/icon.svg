@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="ServiWeb">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" role="img" aria-label="ServiWeb">
   <defs>
-    <linearGradient id="sw" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#070B14"/>
-  <path d="M32 14l16 8v20L32 50 16 42V22l16-8z" fill="none" stroke="url(#sw)" stroke-width="3.2"
-        stroke-linejoin="round" stroke-linecap="round"/>
+  <rect width="84" height="84" rx="20" fill="url(#g)"/>
+  <path d="M42 16 L68 29 V55 L42 68 L16 55 V29 Z M16 29 L42 42 L68 29 M42 42 V68"
+    fill="none" stroke="white" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
