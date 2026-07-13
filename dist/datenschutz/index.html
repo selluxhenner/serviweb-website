@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    Per-route SEO tags (title, description, canonical, robots, Open Graph,
+    Twitter, per-page JSON-LD) are rendered by <SEO /> via react-helmet-async
+    and baked in here at build time by scripts/prerender.mjs. Do NOT add a
+    static <title> or meta description back — it would duplicate them.
+  -->
+  <title data-rh="true">Datenschutz | Serviweb</title>
+  <meta data-rh="true" name="description" content="Datenschutzerklärung von Serviweb – Kevin Schmid, Webdesign und App-Entwicklung in der Ostschweiz."/><meta data-rh="true" name="keywords" content="Webdesign Ostschweiz, Webagentur Ostschweiz, Webdesign St. Gallen, Website erstellen lassen Ostschweiz, Webentwickler Ostschweiz, Webdesign Wil, Webagentur Wil, React Webentwicklung Schweiz, Next.js Agentur Schweiz, Serviweb"/><meta data-rh="true" name="author" content="Kevin Schmid – Serviweb"/><meta data-rh="true" name="geo.region" content="CH-SG"/><meta data-rh="true" name="geo.placename" content="St. Gallen, Ostschweiz"/><meta data-rh="true" name="robots" content="noindex, nofollow"/><meta data-rh="true" property="og:site_name" content="Serviweb"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" property="og:title" content="Datenschutz | Serviweb"/><meta data-rh="true" property="og:description" content="Datenschutzerklärung von Serviweb – Kevin Schmid, Webdesign und App-Entwicklung in der Ostschweiz."/><meta data-rh="true" property="og:url" content="https://www.serviweb.ch/datenschutz"/><meta data-rh="true" property="og:image" content="https://www.serviweb.ch/og-image.jpg"/><meta data-rh="true" property="og:image:alt" content="Serviweb – Datenschutz"/><meta data-rh="true" property="og:locale" content="de_CH"/><meta data-rh="true" name="twitter:card" content="summary_large_image"/><meta data-rh="true" name="twitter:title" content="Datenschutz | Serviweb"/><meta data-rh="true" name="twitter:description" content="Datenschutzerklärung von Serviweb – Kevin Schmid, Webdesign und App-Entwicklung in der Ostschweiz."/><meta data-rh="true" name="twitter:image" content="https://www.serviweb.ch/og-image.jpg"/>
+  <link data-rh="true" rel="canonical" href="https://www.serviweb.ch/datenschutz"/>
+  <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.serviweb.ch/datenschutz#webpage","url":"https://www.serviweb.ch/datenschutz","name":"Datenschutz | Serviweb","description":"Datenschutzerklärung von Serviweb – Kevin Schmid, Webdesign und App-Entwicklung in der Ostschweiz.","inLanguage":"de-CH","isPartOf":{"@id":"https://www.serviweb.ch/#website"},"about":{"@id":"https://www.serviweb.ch/#business"},"publisher":{"@id":"https://www.serviweb.ch/#organization"}}</script>
+
+  <meta name="geo.position" content="47.4245;9.3767" />
+  <meta name="ICBM" content="47.4245, 9.3767" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/icon-light-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/icon-light-32x32.png" />
+
+  <!--
+    Connected entity graph (Organization · LocalBusiness · Person · WebSite).
+    Shared @id anchors let Google and AI engines merge these into one Serviweb entity.
+    ⚠️ Strengthen the brand entity by adding REAL profile URLs to every "sameAs": []
+       below (LinkedIn, Instagram, GitHub, Google Business Profile). See SEO-AUDIT.md.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.serviweb.ch/#organization",
+        "name": "Serviweb",
+        "legalName": "Serviweb – Kevin Schmid",
+        "alternateName": "Serviweb Webagentur Ostschweiz",
+        "url": "https://www.serviweb.ch",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.serviweb.ch/icon.svg",
+          "caption": "Serviweb"
+        },
+        "image": "https://www.serviweb.ch/og-image.jpg",
+        "email": "info@serviweb.ch",
+        "telephone": "+41795350603",
+        "description": "Serviweb ist eine persönliche Webagentur aus der Ostschweiz, die moderne Websites und Apps mit React und Next.js für lokale Unternehmen entwickelt.",
+        "slogan": "Webdesign & Webagentur aus der Ostschweiz",
+        "founder": { "@id": "https://www.serviweb.ch/#kevin-schmid" },
+        "foundingLocation": { "@type": "Place", "name": "Ostschweiz, Schweiz" },
+        "knowsAbout": ["Webdesign", "Webentwicklung", "React", "Next.js", "App-Entwicklung", "SEO", "Local SEO", "Fotografie"],
+        "areaServed": ["St. Gallen", "Wil", "Toggenburg", "Ostschweiz", "Thurgau", "Appenzell", "Schweiz"],
+        "sameAs": [
+          "https://www.instagram.com/serviweb.ch",
+          "https://github.com/selluxhenner"
+        ]
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://www.serviweb.ch/#business",
+        "name": "Serviweb",
+        "alternateName": "Serviweb – Kevin Schmid",
+        "parentOrganization": { "@id": "https://www.serviweb.ch/#organization" },
+        "description": "Webdesign, Webentwicklung und App-Entwicklung für Restaurants, Bars und lokale Unternehmen in St. Gallen, Wil, im Toggenburg und der ganzen Ostschweiz.",
+        "url": "https://www.serviweb.ch",
+        "telephone": "+41795350603",
+        "email": "info@serviweb.ch",
+        "image": "https://www.serviweb.ch/og-image.jpg",
+        "logo": "https://www.serviweb.ch/icon.svg",
+        "priceRange": "CHF 890 – CHF 9000",
+        "currenciesAccepted": "CHF",
+        "paymentAccepted": "Rechnung, Banküberweisung, TWINT",
+        "founder": { "@id": "https://www.serviweb.ch/#kevin-schmid" },
+        "knowsLanguage": ["de-CH", "de", "en"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "St. Gallen",
+          "addressCountry": "CH"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 47.4245, "longitude": 9.3767 },
+        "areaServed": [
+          { "@type": "City", "name": "St. Gallen" },
+          { "@type": "City", "name": "Wil" },
+          { "@type": "AdministrativeArea", "name": "Toggenburg" },
+          { "@type": "AdministrativeArea", "name": "Ostschweiz" },
+          { "@type": "AdministrativeArea", "name": "Thurgau" },
+          { "@type": "AdministrativeArea", "name": "Appenzell" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }],
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webdesign & Website-Entwicklung", "serviceType": "Webdesign" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App-Entwicklung (iOS & Android)", "serviceType": "App-Entwicklung" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & lokale Auffindbarkeit", "serviceType": "SEO" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografie für Web & Social Media", "serviceType": "Fotografie" } }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/serviweb.ch",
+          "https://github.com/selluxhenner"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.serviweb.ch/#kevin-schmid",
+        "name": "Kevin Schmid",
+        "jobTitle": "Webentwickler & Webdesigner",
+        "worksFor": { "@id": "https://www.serviweb.ch/#organization" },
+        "url": "https://www.serviweb.ch",
+        "knowsAbout": ["Webdesign", "React", "Next.js", "React Native", "App-Entwicklung", "SEO"],
+        "sameAs": [
+          "https://github.com/selluxhenner",
+          "https://www.instagram.com/serviweb.ch"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.serviweb.ch/#website",
+        "name": "Serviweb",
+        "alternateName": "Serviweb Webagentur Ostschweiz",
+        "url": "https://www.serviweb.ch",
+        "inLanguage": "de-CH",
+        "publisher": { "@id": "https://www.serviweb.ch/#organization" }
+      }
+    ]
+  }
+  </script>
+  <script type="module" crossorigin src="/assets/index-eiRKe4lH.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-ClQ6aW-M.css">
+</head>
+
+<body>
+  <div id="root"><div style="opacity:0;transform:translateY(14px)"><header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(7,11,20,0.78);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:1px solid rgba(59,130,246,0.08);opacity:0;transform:translateY(-20px)"><nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" role="navigation" aria-label="Hauptnavigation"><a class="flex items-center gap-2.5 flex-shrink-0" href="/"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center" style="box-shadow:0 0 18px rgba(59,130,246,0.5)"><svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"></path></svg></div><span class="text-lg font-bold tracking-tight text-white">Serviweb</span></a><ul class="hidden md:flex items-center gap-8 text-sm font-medium" role="list"><li><a class="transition-colors duration-200 cursor-pointer" style="color:rgba(148,163,184,0.85)" href="/leistungen">Leistungen</a></li><li class="relative flex items-center self-stretch"><a class="flex flex-col cursor-pointer transition-colors duration-200" style="color:rgba(148,163,184,0.85)" aria-haspopup="true" aria-expanded="false" href="/projekte"><span class="flex items-center gap-1">Projekte<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg></span></a></li><li><a class="transition-colors duration-200 cursor-pointer" style="color:rgba(148,163,184,0.85)" href="/kontakt">Kontakt</a></li></ul><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white cursor-pointer" style="background:linear-gradient(135deg,#2563EB 0%,#3B82F6 60%,#1D4ED8 100%);box-shadow:0 0 0 1px rgba(59,130,246,0.35), 0 4px 20px rgba(37,99,235,0.4)" href="/kontakt">Projekt starten<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a><button class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer" aria-label="Menü öffnen" aria-expanded="false"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></nav></header><main class="pt-16" style="background:#070B14;min-height:100vh"><div class="relative py-20 md:py-28" style="background:#070B14;min-height:100vh"><div class="absolute top-0 left-1/2 -translate-x-1/2 h-[400px] pointer-events-none" style="background:radial-gradient(ellipse,rgba(59,130,246,0.06) 0%,transparent 70%);filter:blur(80px)"></div><div class="relative max-w-3xl mx-auto px-6"><div style="opacity:0;transform:translateY(24px)"><p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">Rechtliches</p><h1 class="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight mb-10">Datenschutz­erklärung</h1><div class="rounded-2xl p-8 md:p-10" style="background:rgba(13,21,38,0.72);border:1px solid rgba(59,130,246,0.1);backdrop-filter:blur(16px)"><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">1. Verantwortlicher</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p><p><span class="text-slate-300 font-medium">Kevin Schmid</span><br/>Serviweb<br/>Ostschweiz, Schweiz<br/>E-Mail:<!-- --> <a href="mailto:info@serviweb.ch" class="text-blue-400 hover:text-blue-300 transition-colors">info@serviweb.ch</a></p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">2. Erhebung und Verarbeitung von Daten</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Diese Website erhebt und verarbeitet personenbezogene Daten nur im Rahmen der gesetzlichen Bestimmungen (DSG, DSGVO). Beim Besuch dieser Website werden automatisch technische Daten wie IP-Adresse, Browsertyp, Betriebssystem und Zugriffszeiten temporär in Server-Logfiles gespeichert.</p><p>Diese Daten dienen ausschliesslich der Sicherstellung eines störungsfreien Betriebs der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">3. Kontaktformular und E-Mail</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Wenn Sie über das Kontaktformular oder per E-Mail Kontakt aufnehmen, werden Ihre Angaben (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung Ihrer Anfrage gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung an Dritte weitergegeben.</p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">4. Cookies</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Diese Website verwendet technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind. Es werden keine Tracking- oder Marketing-Cookies eingesetzt. Sie können die Speicherung von Cookies in Ihren Browsereinstellungen deaktivieren.</p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">5. Hosting</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Diese Website wird bei einem Schweizer bzw. europäischen Hosting-Anbieter betrieben. Der Hosting-Anbieter verarbeitet Verbindungsdaten (IP-Adresse, Zugriffszeiten) im Auftrag und nach Weisung des Verantwortlichen.</p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">6. Externe Links</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Diese Website kann Links zu externen Websites enthalten. Für den Datenschutz auf diesen Seiten sind die jeweiligen Betreiber verantwortlich.</p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">7. Ihre Rechte</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Nach dem Schweizer Datenschutzgesetz (DSG) und der DSGVO haben Sie folgende Rechte:</p><ul class="list-disc list-inside space-y-1 pl-2"><li>Auskunft über gespeicherte Daten</li><li>Berichtigung unrichtiger Daten</li><li>Löschung Ihrer Daten (soweit keine gesetzliche Aufbewahrungspflicht besteht)</li><li>Einschränkung der Verarbeitung</li><li>Datenübertragbarkeit</li><li>Widerspruch gegen die Verarbeitung</li></ul><p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:<!-- --> <a href="mailto:info@serviweb.ch" class="text-blue-400 hover:text-blue-300 transition-colors">info@serviweb.ch</a></p></div></div><div class="mb-10"><h2 class="text-lg font-bold text-white mb-3">8. Änderungen dieser Datenschutzerklärung</h2><div class="text-sm text-slate-400 leading-relaxed space-y-2"><p>Diese Datenschutzerklärung kann bei Bedarf angepasst werden. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.</p></div></div><p class="text-xs text-slate-600 pt-4 border-t border-blue-500/[0.08]">Stand: April 2025</p></div></div></div></div></main><footer class="relative" style="background:#04080F" role="contentinfo"><div class="h-px w-full pointer-events-none" style="background:linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent)" aria-hidden="true"></div><div class="max-w-6xl mx-auto px-6 py-16"><div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14"><div class="md:col-span-1"><a class="inline-flex items-center gap-2.5 mb-5" aria-label="Serviweb Startseite" href="/"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center" style="box-shadow:0 0 16px rgba(59,130,246,0.4)" aria-hidden="true"><svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z"></path></svg></div><span class="text-lg font-bold tracking-tight text-white">Servi<span class="text-blue-400">Web</span></span></a><p class="text-sm text-slate-500 leading-relaxed">Webdesign &amp; Webagentur aus der Ostschweiz – moderne Websites und Apps für lokale Unternehmen.</p></div><nav aria-label="Footer Navigation"><p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-5">Navigation</p><ul class="space-y-3" role="list"><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/">Startseite</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/leistungen">Leistungen</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/projekte">Projekte</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/kontakt">Kontakt</a></li></ul></nav><nav aria-label="Regionen"><p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-5">Regionen</p><ul class="space-y-3" role="list"><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/webdesign-ostschweiz">Webdesign Ostschweiz</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/webdesign-wil">Webdesign Wil</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/webdesign-toggenburg">Webdesign Toggenburg</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/webdesign-thurgau">Webdesign Thurgau</a></li><li><a class="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer" href="/leistungen">Alle Leistungen</a></li></ul></nav><div><p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-5">Kontakt</p><ul class="space-y-3" role="list"><li class="flex items-start gap-2.5 text-sm text-slate-400"><svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Ostschweiz, Schweiz</li><li><a href="tel:+41795350603" class="flex items-center gap-2.5 text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+41 79 535 06 03</a></li><li><a href="mailto:info@serviweb.ch" class="flex items-center gap-2.5 text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"><svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>info@serviweb.ch</a></li></ul></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600" style="border-top:1px solid rgba(59,130,246,0.08)"><p>© <!-- -->2026<!-- --> Serviweb · Kevin Schmid. Alle Rechte vorbehalten.</p><div class="flex items-center gap-5"><a class="hover:text-slate-400 transition-colors cursor-pointer" href="/impressum">Impressum</a><a class="hover:text-slate-400 transition-colors cursor-pointer" href="/datenschutz">Datenschutz</a></div></div></div></footer></div></div>
+</body>
+
+</html>
