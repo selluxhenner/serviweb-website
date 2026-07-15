@@ -15,7 +15,7 @@ export default function PageLayout({ children }: Props) {
       transition={{ duration: 0.35, ease: 'easeOut' }}
     >
       <Navbar />
-      <main className="pt-16" style={{ background: '#070B14', minHeight: '100vh' }}>
+      <main className="pt-16" style={{ background: '#FFFFFF', minHeight: '100vh' }}>
         {children}
       </main>
       <Footer />

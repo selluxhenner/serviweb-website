@@ -12,7 +12,11 @@ const FEATURED: FeaturedItem[] = [
     name: 'Vocafy',
     subtitle: 'Lernplattform & iOS/Android App',
     to: '/projekte/vocafy',
+<<<<<<< HEAD
     initBg: 'linear-gradient(135deg,#2563EB,#1E3A8A)',
+=======
+    initBg: 'linear-gradient(135deg,#3B82F6,#8B5CF6)',
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
     initial: 'VO',
   },
   {
@@ -25,6 +29,7 @@ const FEATURED: FeaturedItem[] = [
 ]
 
 const MEGA_WEBSITES: MegaLink[] = [
+<<<<<<< HEAD
   { name: 'VISION KUNST',         href: 'https://vision-wil.ch',        dot: '#2563EB' },
   { name: 'Trinkstube zum Hartz', href: 'https://trinkstubezumhartz.ch', dot: '#2563EB' },
   { name: 'ILGE Piano Bar',       href: 'https://ilge-pianobar.ch',      dot: '#2563EB' },
@@ -39,6 +44,22 @@ const DIVIDER = 'border-l border-slate-200'
 
 const MOBILE_PROJECTS = [
   { name: 'Vocafy', init: 'VO', bg: 'linear-gradient(135deg,#2563EB,#1E3A8A)', to: '/projekte/vocafy' as string | null, href: undefined as string | undefined },
+=======
+  { name: 'VISION KUNST',         href: 'https://vision-wil.ch',        dot: '#EC4899' },
+  { name: 'Trinkstube zum Hartz', href: 'https://trinkstubezumhartz.ch', dot: '#06B6D4' },
+  { name: 'ILGE Piano Bar',       href: 'https://ilge-pianobar.ch',      dot: '#8B5CF6' },
+]
+
+const MEGA_APPS: MegaLink[] = [
+  { name: 'School Companion', to: '/projekte/school-companion', dot: '#10B981' },
+  { name: 'Daily Goals',      to: '/projekte/daily-goals',      dot: '#EC4899', comingSoon: true },
+]
+
+const DIVIDER = 'border-l border-blue-500/[0.08]'
+
+const MOBILE_PROJECTS = [
+  { name: 'Vocafy', init: 'VO', bg: 'linear-gradient(135deg,#3B82F6,#8B5CF6)', to: '/projekte/vocafy' as string | null, href: undefined as string | undefined },
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
   { name: 'School', init: 'SC', bg: 'linear-gradient(135deg,#10B981,#06B6D4)', to: '/projekte/school-companion',          href: undefined },
   { name: 'Vision', init: 'VW', bg: 'linear-gradient(135deg,#F97316,#EF4444)', to: null,                                  href: 'https://vision-wil.ch' },
 ]
@@ -74,10 +95,17 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="fixed top-0 left-0 right-0 z-50"
         style={{
+<<<<<<< HEAD
           background: 'rgba(255,255,255,0.88)',
           backdropFilter: 'blur(22px)',
           WebkitBackdropFilter: 'blur(22px)',
           borderBottom: '1px solid #E2E8F0',
+=======
+          background: 'rgba(7,11,20,0.78)',
+          backdropFilter: 'blur(22px)',
+          WebkitBackdropFilter: 'blur(22px)',
+          borderBottom: '1px solid rgba(59,130,246,0.08)',
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
         }}
       >
         <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"
@@ -85,19 +113,38 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" onClick={closeAll} className="flex items-center gap-2.5 flex-shrink-0">
+<<<<<<< HEAD
             <img src="/symbol-mark.png" alt="" aria-hidden="true" className="h-7 w-auto" />
             <img src="/logo-large-blue.png" alt="Serviweb" className="h-4 w-auto" />
+=======
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center"
+              style={{ boxShadow: '0 0 18px rgba(59,130,246,0.5)' }}>
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z" />
+              </svg>
+            </div>
+            <span className="text-lg font-bold tracking-tight text-white">Serviweb
+            </span>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
           </Link>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8 text-sm font-medium" role="list">
             <li>
               <Link to="/leistungen" className="transition-colors duration-200 cursor-pointer"
+<<<<<<< HEAD
                 style={{ color: isActive('/leistungen') ? '#1E3A8A' : '#64748B' }}>
                 Leistungen
                 {isActive('/leistungen') && (
                   <motion.div layoutId="nav-underline" className="h-px mt-0.5 rounded-full"
                     style={{ background: '#2563EB' }}
+=======
+                style={{ color: isActive('/leistungen') ? 'white' : 'rgba(148,163,184,0.85)' }}>
+                Leistungen
+                {isActive('/leistungen') && (
+                  <motion.div layoutId="nav-underline" className="h-px mt-0.5 rounded-full"
+                    style={{ background: 'linear-gradient(90deg,#3B82F6,#8B5CF6)' }}
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }} />
                 )}
               </Link>
@@ -106,7 +153,11 @@ export default function Navbar() {
             <li className="relative flex items-center self-stretch" onMouseEnter={openMega} onMouseLeave={closeMega}>
               <Link to="/projekte" onClick={() => setMegaOpen(false)}
                 className="flex flex-col cursor-pointer transition-colors duration-200"
+<<<<<<< HEAD
                 style={{ color: isProjekteActive || megaOpen ? '#1E3A8A' : '#64748B' }}
+=======
+                style={{ color: isProjekteActive || megaOpen ? 'white' : 'rgba(148,163,184,0.85)' }}
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                 aria-haspopup="true" aria-expanded={megaOpen}>
                 <span className="flex items-center gap-1">
                   Projekte
@@ -117,7 +168,11 @@ export default function Navbar() {
                 </span>
                 {isProjekteActive && (
                   <motion.div layoutId="nav-underline" className="h-px mt-0.5 rounded-full"
+<<<<<<< HEAD
                     style={{ background: '#2563EB' }}
+=======
+                    style={{ background: 'linear-gradient(90deg,#3B82F6,#8B5CF6)' }}
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }} />
                 )}
               </Link>
@@ -125,11 +180,19 @@ export default function Navbar() {
 
             <li>
               <Link to="/kontakt" className="transition-colors duration-200 cursor-pointer"
+<<<<<<< HEAD
                 style={{ color: isActive('/kontakt') ? '#1E3A8A' : '#64748B' }}>
                 Kontakt
                 {isActive('/kontakt') && (
                   <motion.div layoutId="nav-underline" className="h-px mt-0.5 rounded-full"
                     style={{ background: '#2563EB' }}
+=======
+                style={{ color: isActive('/kontakt') ? 'white' : 'rgba(148,163,184,0.85)' }}>
+                Kontakt
+                {isActive('/kontakt') && (
+                  <motion.div layoutId="nav-underline" className="h-px mt-0.5 rounded-full"
+                    style={{ background: 'linear-gradient(90deg,#3B82F6,#8B5CF6)' }}
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }} />
                 )}
               </Link>
@@ -141,8 +204,13 @@ export default function Navbar() {
             <Link to="/kontakt"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white cursor-pointer"
               style={{
+<<<<<<< HEAD
                 background: '#2563EB',
                 boxShadow: '0 2px 12px rgba(37,99,235,0.25)',
+=======
+                background: 'linear-gradient(135deg,#2563EB 0%,#3B82F6 60%,#1D4ED8 100%)',
+                boxShadow: '0 0 0 1px rgba(59,130,246,0.35), 0 4px 20px rgba(37,99,235,0.4)',
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
               }}>
               Projekt starten
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -150,7 +218,11 @@ export default function Navbar() {
               </svg>
             </Link>
 
+<<<<<<< HEAD
             <button className="md:hidden p-2 rounded-lg text-slate-500 hover:text-slate-900 transition-colors cursor-pointer"
+=======
+            <button className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer"
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
               onClick={() => setOpen(!open)}
               aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
               aria-expanded={open}>
@@ -173,12 +245,20 @@ export default function Navbar() {
               transition={{ duration: 0.18, ease: 'easeOut' }}
               onMouseEnter={openMega} onMouseLeave={closeMega}
               style={{
+<<<<<<< HEAD
                 borderTop: '1px solid #E2E8F0',
                 borderBottom: '1px solid #E2E8F0',
                 background: 'rgba(255,255,255,0.98)',
                 backdropFilter: 'blur(28px)',
                 WebkitBackdropFilter: 'blur(28px)',
                 boxShadow: '0 16px 40px rgba(15,23,42,0.08)',
+=======
+                borderTop: '1px solid rgba(59,130,246,0.08)',
+                borderBottom: '1px solid rgba(59,130,246,0.1)',
+                background: 'rgba(5,8,16,0.97)',
+                backdropFilter: 'blur(28px)',
+                WebkitBackdropFilter: 'blur(28px)',
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
               }}>
               <div className="max-w-6xl mx-auto px-6 py-7">
                 <div className="grid grid-cols-3 gap-0">
@@ -188,12 +268,18 @@ export default function Navbar() {
                     <div className="flex flex-col gap-1.5">
                       {FEATURED.map(item => {
                         const card = (
+<<<<<<< HEAD
                           <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 transition-colors group cursor-pointer">
                             <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black text-white flex-shrink-0 shadow-md"
+=======
+                          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/[0.05] transition-colors group cursor-pointer">
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black text-white flex-shrink-0 shadow-lg"
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                               style={{ background: item.initBg }}>
                               {item.initial}
                             </div>
                             <div className="min-w-0 flex-1">
+<<<<<<< HEAD
                               <p className="text-sm font-semibold text-slate-900 group-hover:text-blue-900 transition-colors leading-tight">{item.name}</p>
                               <p className="text-[11px] text-slate-500 mt-0.5">{item.subtitle}</p>
                             </div>
@@ -203,6 +289,17 @@ export default function Navbar() {
                               </svg>
                             ) : (
                               <svg className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+=======
+                              <p className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors leading-tight">{item.name}</p>
+                              <p className="text-[11px] text-slate-500 mt-0.5">{item.subtitle}</p>
+                            </div>
+                            {item.to ? (
+                              <svg className="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                              </svg>
+                            ) : (
+                              <svg className="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                               </svg>
                             )}
@@ -212,7 +309,11 @@ export default function Navbar() {
                         return <a key={item.name} href={item.href ?? '#'} target="_blank" rel="noopener noreferrer" className="block">{card}</a>
                       })}
                       <Link to="/projekte" onClick={() => setMegaOpen(false)}
+<<<<<<< HEAD
                         className="flex items-center gap-1.5 px-3 py-2 text-xs text-blue-600 hover:text-blue-800 transition-colors mt-1">
+=======
+                        className="flex items-center gap-1.5 px-3 py-2 text-xs text-blue-400 hover:text-blue-300 transition-colors mt-1">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                         Alle Projekte ansehen
                         <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -227,10 +328,17 @@ export default function Navbar() {
                       {MEGA_WEBSITES.map(w => (
                         <li key={w.name}>
                           <a href={w.href ?? '#'} target="_blank" rel="noopener noreferrer"
+<<<<<<< HEAD
                             className="flex items-center gap-2.5 py-2 px-2 rounded-lg hover:bg-slate-100 transition-colors group cursor-pointer">
                             <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: w.dot }} />
                             <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors flex-1">{w.name}</span>
                             <span className="opacity-0 group-hover:opacity-100 transition-opacity text-slate-400">
+=======
+                            className="flex items-center gap-2.5 py-2 px-2 rounded-lg hover:bg-white/[0.04] transition-colors group cursor-pointer">
+                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: w.dot }} />
+                            <span className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors flex-1">{w.name}</span>
+                            <span className="opacity-0 group-hover:opacity-100 transition-opacity text-slate-600">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                               </svg>
@@ -248,10 +356,17 @@ export default function Navbar() {
                         <li key={a.name}>
                           {a.to ? (
                             <Link to={a.to} onClick={() => setMegaOpen(false)}
+<<<<<<< HEAD
                               className="flex items-center gap-2.5 py-2 px-2 rounded-lg hover:bg-slate-100 transition-colors group cursor-pointer">
                               <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: a.dot }} />
                               <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors flex-1">{a.name}</span>
                               <span className="opacity-0 group-hover:opacity-100 transition-opacity text-slate-400">
+=======
+                              className="flex items-center gap-2.5 py-2 px-2 rounded-lg hover:bg-white/[0.04] transition-colors group cursor-pointer">
+                              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: a.dot }} />
+                              <span className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors flex-1">{a.name}</span>
+                              <span className="opacity-0 group-hover:opacity-100 transition-opacity text-slate-600">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
@@ -260,8 +375,13 @@ export default function Navbar() {
                           ) : (
                             <div className="flex items-center gap-2.5 py-2 px-2">
                               <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 opacity-40" style={{ background: a.dot }} />
+<<<<<<< HEAD
                               <span className="text-sm text-slate-400">{a.name}</span>
                               <span className="ml-auto text-[9px] font-semibold text-amber-600 uppercase tracking-wider">Soon</span>
+=======
+                              <span className="text-sm text-slate-600">{a.name}</span>
+                              <span className="ml-auto text-[9px] font-semibold text-amber-500/60 uppercase tracking-wider">Soon</span>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                             </div>
                           )}
                         </li>
@@ -285,6 +405,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
             className="fixed inset-0 z-[55] md:hidden flex flex-col overflow-hidden"
+<<<<<<< HEAD
             style={{ background: '#FFFFFF' }}
           >
             {/* Top bar */}
@@ -296,6 +417,28 @@ export default function Navbar() {
               </Link>
               <button onClick={() => setOpen(false)} aria-label="Menü schließen"
                 className="p-2 rounded-lg text-slate-500 hover:text-slate-900 transition-colors cursor-pointer">
+=======
+            style={{ background: '#04080F' }}
+          >
+            {/* Ambient glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[300px] pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse,rgba(59,130,246,0.1) 0%,transparent 70%)', filter: 'blur(60px)' }} />
+
+            {/* Top bar */}
+            <div className="relative flex items-center justify-between px-6 h-16 flex-shrink-0"
+              style={{ borderBottom: '1px solid rgba(59,130,246,0.08)' }}>
+              <Link to="/" onClick={closeAll} className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center"
+                  style={{ boxShadow: '0 0 18px rgba(59,130,246,0.5)' }}>
+                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l9 4.5v9L12 21l-9-4.5v-9L12 3z" />
+                  </svg>
+                </div>
+                <span className="text-lg font-bold tracking-tight text-white">Servi<span className="text-blue-400">Web</span></span>
+              </Link>
+              <button onClick={() => setOpen(false)} aria-label="Menü schließen"
+                className="p-2 rounded-lg text-slate-400 hover:text-white transition-colors cursor-pointer">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -313,6 +456,7 @@ export default function Navbar() {
               <motion.div variants={navItem}>
                 <Link to="/leistungen" onClick={closeAll}
                   className="flex items-center justify-between py-5 group"
+<<<<<<< HEAD
                   style={{ borderBottom: '1px solid #E2E8F0' }}>
                   <div className="flex items-center gap-4">
                     <span className="text-[11px] font-mono text-slate-400 w-5 flex-shrink-0">01</span>
@@ -326,6 +470,21 @@ export default function Navbar() {
                     )}
                   </div>
                   <svg className="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+=======
+                  style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[11px] font-mono text-slate-700 w-5 flex-shrink-0">01</span>
+                    <span className="text-xl font-black tracking-tight transition-colors duration-200"
+                      style={{ color: isActive('/leistungen') ? '#3B82F6' : 'white' }}>
+                      Leistungen
+                    </span>
+                    {isActive('/leistungen') && (
+                      <span className="text-[10px] text-blue-400 font-semibold px-2 py-0.5 rounded-full"
+                        style={{ background: 'rgba(59,130,246,0.12)' }}>aktiv</span>
+                    )}
+                  </div>
+                  <svg className="w-4 h-4 text-slate-700 group-hover:text-slate-400 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
@@ -333,17 +492,30 @@ export default function Navbar() {
 
               {/* 02 – Projekte with visual project tiles */}
               <motion.div variants={navItem}>
+<<<<<<< HEAD
                 <div className="py-5" style={{ borderBottom: '1px solid #E2E8F0' }}>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-4">
                       <span className="text-[11px] font-mono text-slate-400 w-5 flex-shrink-0">02</span>
                       <span className="text-xl font-black tracking-tight"
                         style={{ color: isProjekteActive ? '#2563EB' : '#1E3A8A' }}>
+=======
+                <div className="py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-4">
+                      <span className="text-[11px] font-mono text-slate-700 w-5 flex-shrink-0">02</span>
+                      <span className="text-xl font-black tracking-tight"
+                        style={{ color: isProjekteActive ? '#3B82F6' : 'white' }}>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                         Projekte
                       </span>
                     </div>
                     <Link to="/projekte" onClick={closeAll}
+<<<<<<< HEAD
                       className="flex items-center gap-1 text-xs text-slate-500 hover:text-blue-600 transition-colors">
+=======
+                      className="flex items-center gap-1 text-xs text-slate-600 hover:text-blue-400 transition-colors">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                       Alle ansehen
                       <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -355,29 +527,53 @@ export default function Navbar() {
                     {MOBILE_PROJECTS.map(p =>
                       p.to ? (
                         <Link key={p.name} to={p.to} onClick={closeAll} className="flex flex-col items-center gap-1.5">
+<<<<<<< HEAD
                           <div className="w-full aspect-square rounded-2xl flex items-center justify-center text-xs font-black text-white shadow-md"
                             style={{ background: p.bg }}>
                             {p.init}
                           </div>
                           <p className="text-[9px] text-slate-500 text-center leading-tight">{p.name}</p>
+=======
+                          <div className="w-full aspect-square rounded-2xl flex items-center justify-center text-xs font-black text-white shadow-lg"
+                            style={{ background: p.bg }}>
+                            {p.init}
+                          </div>
+                          <p className="text-[9px] text-slate-600 text-center leading-tight">{p.name}</p>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                         </Link>
                       ) : (
                         <a key={p.name} href={p.href} target="_blank" rel="noopener noreferrer"
                           onClick={() => setOpen(false)} className="flex flex-col items-center gap-1.5">
+<<<<<<< HEAD
                           <div className="w-full aspect-square rounded-2xl flex items-center justify-center text-xs font-black text-white shadow-md"
                             style={{ background: p.bg }}>
                             {p.init}
                           </div>
                           <p className="text-[9px] text-slate-500 text-center leading-tight">{p.name}</p>
+=======
+                          <div className="w-full aspect-square rounded-2xl flex items-center justify-center text-xs font-black text-white shadow-lg"
+                            style={{ background: p.bg }}>
+                            {p.init}
+                          </div>
+                          <p className="text-[9px] text-slate-600 text-center leading-tight">{p.name}</p>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                         </a>
                       )
                     )}
                     <Link to="/projekte" onClick={closeAll} className="flex flex-col items-center gap-1.5">
+<<<<<<< HEAD
                       <div className="w-full aspect-square rounded-2xl flex items-center justify-center text-xs font-black text-blue-600"
                         style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)' }}>
                         +9
                       </div>
                       <p className="text-[9px] text-slate-500 text-center">Mehr</p>
+=======
+                      <div className="w-full aspect-square rounded-2xl flex items-center justify-center text-xs font-black text-blue-400"
+                        style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.2)' }}>
+                        +9
+                      </div>
+                      <p className="text-[9px] text-slate-600 text-center">Mehr</p>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                     </Link>
                   </div>
                 </div>
@@ -387,6 +583,7 @@ export default function Navbar() {
               <motion.div variants={navItem}>
                 <Link to="/kontakt" onClick={closeAll}
                   className="flex items-center justify-between py-5 group"
+<<<<<<< HEAD
                   style={{ borderBottom: '1px solid #E2E8F0' }}>
                   <div className="flex items-center gap-4">
                     <span className="text-[11px] font-mono text-slate-400 w-5 flex-shrink-0">03</span>
@@ -400,6 +597,21 @@ export default function Navbar() {
                     )}
                   </div>
                   <svg className="w-4 h-4 text-slate-300 group-hover:text-slate-500 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+=======
+                  style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[11px] font-mono text-slate-700 w-5 flex-shrink-0">03</span>
+                    <span className="text-xl font-black tracking-tight transition-colors duration-200"
+                      style={{ color: isActive('/kontakt') ? '#3B82F6' : 'white' }}>
+                      Kontakt
+                    </span>
+                    {isActive('/kontakt') && (
+                      <span className="text-[10px] text-blue-400 font-semibold px-2 py-0.5 rounded-full"
+                        style={{ background: 'rgba(59,130,246,0.12)' }}>aktiv</span>
+                    )}
+                  </div>
+                  <svg className="w-4 h-4 text-slate-700 group-hover:text-slate-400 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
@@ -411,6 +623,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.28, duration: 0.35 }}
               className="relative px-6 pb-8 pt-5 flex-shrink-0"
+<<<<<<< HEAD
               style={{ borderTop: '1px solid #E2E8F0', background: '#F1F5F9' }}>
               <div className="flex items-center gap-2.5 mb-4">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0" />
@@ -420,6 +633,18 @@ export default function Navbar() {
               <Link to="/kontakt" onClick={closeAll}
                 className="flex items-center justify-center gap-2.5 w-full py-4 rounded-2xl font-bold text-white text-base cursor-pointer"
                 style={{ background: '#2563EB', boxShadow: '0 4px 16px rgba(37,99,235,0.3)' }}>
+=======
+              style={{ borderTop: '1px solid rgba(59,130,246,0.08)' }}>
+              <div className="flex items-center gap-2.5 mb-4">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"
+                  style={{ boxShadow: '0 0 8px rgba(16,185,129,0.7)' }} />
+                <span className="text-sm font-medium text-emerald-400">Aktuell verfügbar</span>
+                <span className="text-xs text-slate-600">· Antwort in 24h</span>
+              </div>
+              <Link to="/kontakt" onClick={closeAll}
+                className="flex items-center justify-center gap-2.5 w-full py-4 rounded-2xl font-bold text-white text-base cursor-pointer"
+                style={{ background: 'linear-gradient(135deg,#2563EB,#3B82F6)', boxShadow: '0 4px 24px rgba(37,99,235,0.4)' }}>
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                 Projekt starten
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -427,12 +652,21 @@ export default function Navbar() {
               </Link>
               <div className="flex items-center justify-center gap-5 mt-4">
                 <Link to="/impressum" onClick={closeAll}
+<<<<<<< HEAD
                   className="text-xs text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">
                   Impressum
                 </Link>
                 <span className="w-1 h-1 rounded-full bg-slate-300" aria-hidden="true" />
                 <Link to="/datenschutz" onClick={closeAll}
                   className="text-xs text-slate-500 hover:text-slate-700 transition-colors cursor-pointer">
+=======
+                  className="text-xs text-slate-700 hover:text-slate-500 transition-colors cursor-pointer">
+                  Impressum
+                </Link>
+                <span className="w-1 h-1 rounded-full bg-slate-800" aria-hidden="true" />
+                <Link to="/datenschutz" onClick={closeAll}
+                  className="text-xs text-slate-700 hover:text-slate-500 transition-colors cursor-pointer">
+>>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
                   Datenschutz
                 </Link>
               </div>

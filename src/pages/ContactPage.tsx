@@ -4,12 +4,13 @@ import PageLayout from '../components/PageLayout'
 import SEO from '../components/SEO'
 import Breadcrumbs from '../components/Breadcrumbs'
 
-const inputCls = 'w-full px-4 py-3 rounded-xl text-sm text-white placeholder-slate-600 outline-none transition-all duration-200 focus:ring-2'
+const inputCls = 'w-full px-4 py-3 rounded-xl text-sm placeholder-slate-400 outline-none transition-all duration-200 focus:ring-2'
 const inputStyle = {
-  background: 'rgba(13,21,38,0.9)',
-  border: '1px solid rgba(59,130,246,0.18)',
+  background: '#FFFFFF',
+  border: '1px solid #CBD5E1',
+  color: '#0F172A',
 }
-const inputFocusRing = { '--tw-ring-color': 'rgba(59,130,246,0.35)' } as React.CSSProperties
+const inputFocusRing = { '--tw-ring-color': 'rgba(37,99,235,0.3)' } as React.CSSProperties
 
 const PROJECT_TYPES = [
   'Restaurant / Bar Website',
@@ -25,7 +26,7 @@ const PROJECT_TYPES = [
 function FormField({ label, id, children }: { label: string; id: string; children: React.ReactNode }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+      <label htmlFor={id} className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#64748B' }}>
         {label}
       </label>
       {children}
@@ -39,27 +40,18 @@ const CONTACT_ITEMS = [
     label: 'Telefon',
     value: '+41 79 535 06 03',
     href: 'tel:+41795350603',
-    color: '#3B82F6',
-    bg: 'rgba(59,130,246,0.1)',
-    glow: '0 0 16px rgba(59,130,246,0.2)',
   },
   {
     icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
     label: 'E-Mail',
     value: 'info@serviweb.ch',
     href: 'mailto:info@serviweb.ch',
-    color: '#8B5CF6',
-    bg: 'rgba(139,92,246,0.1)',
-    glow: '0 0 16px rgba(139,92,246,0.2)',
   },
   {
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
     label: 'Standort',
     value: 'Ostschweiz, Schweiz',
     href: null,
-    color: '#06B6D4',
-    bg: 'rgba(6,182,212,0.1)',
-    glow: '0 0 16px rgba(6,182,212,0.2)',
   },
 ]
 
@@ -91,25 +83,17 @@ export default function ContactPage() {
       <Breadcrumbs items={[{ name: 'Kontakt', url: '/kontakt' }]} />
       <div className="relative py-20 md:py-28">
 
-        {/* Background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2  h-[500px] pointer-events-none"
-          style={{ background:'radial-gradient(ellipse,rgba(59,130,246,0.08) 0%,transparent 70%)', filter:'blur(80px)' }} />
-
         <div className="relative max-w-5xl mx-auto px-6">
 
           {/* Header */}
           <motion.div initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }}
             className="mb-14">
-            <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">Kontakt</p>
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight mb-4">
-              Projekt{' '}
-              <span style={{ background:'linear-gradient(135deg,#93C5FD 0%,#A78BFA 100%)',
-                WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
-                starten
-              </span>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#64748B' }}>Kontakt</p>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4" style={{ color: '#1E3A8A' }}>
+              Projekt <span style={{ color: '#2563EB' }}>starten</span>
             </h1>
-            <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
-              Erzähl mir von deinem Projekt. Ich melde mich innerhalb von <strong className="text-white">24 Stunden</strong>.
+            <p className="text-lg max-w-lg leading-relaxed" style={{ color: '#64748B' }}>
+              Erzähl mir von deinem Projekt. Ich melde mich innerhalb von <strong style={{ color: '#0F172A' }}>24 Stunden</strong>.
             </p>
           </motion.div>
 
@@ -123,22 +107,22 @@ export default function ContactPage() {
                   <motion.div key="success"
                     initial={{ opacity:0, scale:0.95 }} animate={{ opacity:1, scale:1 }}
                     className="rounded-3xl p-12 text-center"
-                    style={{ background:'rgba(13,21,38,0.76)', border:'1px solid rgba(16,185,129,0.3)' }}>
-                    <div className="w-18 h-18 rounded-full bg-emerald-500/15 flex items-center justify-center mx-auto mb-6"
-                      style={{ width:72, height:72, boxShadow:'0 0 40px rgba(16,185,129,0.25)' }}>
-                      <svg className="w-9 h-9 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    style={{ background:'#F1F5F9', border:'1px solid rgba(16,185,129,0.4)' }}>
+                    <div className="rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6"
+                      style={{ width:72, height:72 }}>
+                      <svg className="w-9 h-9 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h2 className="text-2xl font-black text-white mb-3">Nachricht gesendet!</h2>
-                    <p className="text-slate-400 leading-relaxed max-w-sm mx-auto">
+                    <h2 className="text-2xl font-black mb-3" style={{ color: '#1E3A8A' }}>Nachricht gesendet!</h2>
+                    <p className="leading-relaxed max-w-sm mx-auto" style={{ color: '#64748B' }}>
                       Danke für deine Anfrage. Ich melde mich so schnell wie möglich – in der Regel innerhalb von 24 Stunden.
                     </p>
                   </motion.div>
                 ) : (
                   <motion.form key="form" onSubmit={handleSubmit}
                     className="rounded-3xl p-5 sm:p-8 space-y-6"
-                    style={{ background:'rgba(13,21,38,0.76)', border:'1px solid rgba(59,130,246,0.13)' }}>
+                    style={{ background:'#F1F5F9', border:'1px solid #E2E8F0' }}>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <FormField label="Name *" id="name">
@@ -178,8 +162,8 @@ export default function ContactPage() {
                       whileTap={loading ? {} : { scale: 0.98 }}
                       className="w-full py-4 rounded-2xl font-bold text-white transition-opacity cursor-pointer flex items-center justify-center gap-3"
                       style={{
-                        background: 'linear-gradient(135deg,#2563EB 0%,#3B82F6 60%,#1D4ED8 100%)',
-                        boxShadow: '0 4px 24px rgba(37,99,235,0.45)',
+                        background: '#2563EB',
+                        boxShadow: '0 4px 16px rgba(37,99,235,0.25)',
                         opacity: loading ? 0.8 : 1,
                       }}>
                       {loading ? (
@@ -200,7 +184,7 @@ export default function ContactPage() {
                       )}
                     </motion.button>
 
-                    <p className="text-xs text-slate-600 text-center">
+                    <p className="text-xs text-center" style={{ color: '#94A3B8' }}>
                       Deine Daten werden vertraulich behandelt und nicht weitergegeben.
                     </p>
                   </motion.form>
@@ -214,33 +198,34 @@ export default function ContactPage() {
 
               {/* Availability */}
               <div className="rounded-2xl p-5 flex items-center gap-4"
-                style={{ background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.25)' }}>
-                <div className="w-3 h-3 rounded-full bg-emerald-400 flex-shrink-0" style={{ boxShadow:'0 0 10px rgba(16,185,129,0.6)', animation:'pulse 2s infinite' }} />
+                style={{ background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.3)' }}>
+                <div className="w-3 h-3 rounded-full bg-emerald-500 flex-shrink-0" style={{ animation:'pulse 2s infinite' }} />
                 <div>
-                  <p className="text-emerald-400 font-bold text-sm">Aktuell verfügbar</p>
-                  <p className="text-slate-500 text-xs mt-0.5">Antwort innerhalb von 24h</p>
+                  <p className="text-emerald-700 font-bold text-sm">Aktuell verfügbar</p>
+                  <p className="text-xs mt-0.5" style={{ color: '#64748B' }}>Antwort innerhalb von 24h</p>
                 </div>
               </div>
 
               {CONTACT_ITEMS.map(item => (
                 <div key={item.label} className="rounded-2xl p-5"
-                  style={{ background:'rgba(13,21,38,0.76)', border:'1px solid rgba(59,130,246,0.1)' }}>
+                  style={{ background:'#F1F5F9', border:'1px solid #E2E8F0' }}>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background:item.bg, boxShadow:item.glow }}>
-                      <svg className="w-5 h-5" style={{ color:item.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                      style={{ background:'rgba(37,99,235,0.1)' }}>
+                      <svg className="w-5 h-5" style={{ color:'#2563EB' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                         <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                       </svg>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">{item.label}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#64748B' }}>{item.label}</p>
                       {item.href ? (
                         <a href={item.href}
-                          className="text-white font-semibold text-sm hover:text-blue-400 transition-colors cursor-pointer">
+                          className="font-semibold text-sm transition-colors cursor-pointer hover:opacity-80"
+                          style={{ color: '#1E3A8A' }}>
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-white font-semibold text-sm">{item.value}</p>
+                        <p className="font-semibold text-sm" style={{ color: '#1E3A8A' }}>{item.value}</p>
                       )}
                     </div>
                   </div>
@@ -249,8 +234,8 @@ export default function ContactPage() {
 
               {/* What to expect */}
               <div className="rounded-2xl p-5"
-                style={{ background:'rgba(13,21,38,0.76)', border:'1px solid rgba(59,130,246,0.1)' }}>
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Was passiert als nächstes?</p>
+                style={{ background:'#F1F5F9', border:'1px solid #E2E8F0' }}>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#64748B' }}>Was passiert als nächstes?</p>
                 <div className="space-y-3">
                   {[
                     { step:'1', text:'Du sendest deine Anfrage' },
@@ -259,9 +244,9 @@ export default function ContactPage() {
                     { step:'4', text:'Konkretes Angebot & Start' },
                   ].map(s => (
                     <div key={s.step} className="flex items-center gap-3">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black text-blue-400 flex-shrink-0"
-                        style={{ background:'rgba(59,130,246,0.12)' }}>{s.step}</span>
-                      <span className="text-sm text-slate-400">{s.text}</span>
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0"
+                        style={{ background:'rgba(37,99,235,0.1)', color: '#2563EB' }}>{s.step}</span>
+                      <span className="text-sm" style={{ color: '#0F172A' }}>{s.text}</span>
                     </div>
                   ))}
                 </div>
