@@ -106,33 +106,11 @@ export default function SchoolCompanionPage() {
               <motion.div initial={{ opacity:0, scale:0.9 }} animate={{ opacity:1, scale:1 }}
                 transition={{ duration:0.8, delay:0.2 }} className="flex-shrink-0">
                 {/* Phone mockup */}
-                <div className="relative w-44 sm:w-52 rounded-[2.8rem] p-3"
+                <div className="relative w-52 sm:w-60 rounded-[2rem] p-1.5"
                   style={{ background:'#F1F5F9', border:'1px solid #E2E8F0', boxShadow:'0 24px 60px rgba(15,23,42,0.12)' }}>
-                  <div className="rounded-[2.2rem] overflow-hidden" style={{ background:'#FFFFFF', border:'1px solid #E2E8F0', minHeight:'340px' }}>
-                    {/* Fake app UI */}
-                    <div className="p-4 pt-6">
-                      <p className="text-xs font-bold mb-3" style={{ color: '#64748B' }}>Heute</p>
-                      {['Mathe – Seite 42', 'Deutsch – Aufsatz', 'Bio – Lernzettel'].map((task, i) => (
-                        <div key={task} className="flex items-center gap-2.5 mb-2.5 rounded-xl px-3 py-2.5"
-                          style={{ background:'rgba(16,185,129,0.06)', border:'1px solid rgba(16,185,129,0.2)' }}>
-                          <div className={`w-4 h-4 rounded-full flex-shrink-0 border-2 ${i === 0 ? 'bg-emerald-500 border-emerald-500' : 'border-emerald-500/40'}`}>
-                            {i === 0 && <svg className="w-full h-full text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
-                          </div>
-                          <span className={`text-xs font-medium ${i === 0 ? 'line-through' : ''}`}
-                            style={{ color: i === 0 ? '#94A3B8' : '#0F172A' }}>{task}</span>
-                        </div>
-                      ))}
-                      <p className="text-xs font-bold mb-3 mt-5" style={{ color: '#64748B' }}>Noten Ø</p>
-                      <div className="grid grid-cols-3 gap-2">
-                        {[['Mathe','4.8','#2563EB'],['Deutsch','5.2','#1E3A8A'],['Bio','5.5','#10B981']].map(([f,n,c]) => (
-                          <div key={f} className="rounded-xl p-2 text-center"
-                            style={{ background:`${c}10`, border:`1px solid ${c}30` }}>
-                            <div className="text-lg font-black" style={{ color:c }}>{n}</div>
-                            <div className="text-[9px] mt-0.5" style={{ color: '#64748B' }}>{f}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                  <div className="rounded-[1.6rem] overflow-hidden" style={{ background:'#FFFFFF', border:'1px solid #E2E8F0' }}>
+                    <img src="/app/home.jpeg" alt="School Companion App – Startbildschirm mit aktueller Lektion und Wochenplan"
+                      className="w-full h-auto block" loading="eager" />
                   </div>
                 </div>
               </motion.div>

@@ -157,72 +157,18 @@ export default function DailyGoalsPage() {
             <motion.div initial={{ opacity:0, y:24 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ duration:0.7 }} className="mb-12">
               <h2 className="text-3xl font-black mb-3" style={{ color: '#1E3A8A' }}>App-Vorschau</h2>
-              <p className="text-sm" style={{ color: '#64748B' }}>Frühe Design-Konzepte. Das finale Design kann abweichen.</p>
+              <p className="text-sm" style={{ color: '#64748B' }}>Ein Blick in die aktuelle Beta – das finale Design kann abweichen.</p>
             </motion.div>
 
             <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ duration:0.8 }}
               className="inline-block relative">
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-[3rem]"
-                style={{ background:'radial-gradient(ellipse,rgba(236,72,153,0.12) 0%,transparent 70%)', filter:'blur(40px)', transform:'scale(1.3)' }} />
-
               {/* Phone */}
-              <div className="relative w-44 sm:w-56 rounded-[3rem] p-3"
+              <div className="relative w-52 sm:w-60 rounded-[2rem] p-1.5"
                 style={{ background:'#F1F5F9', border:'1px solid #E2E8F0', boxShadow:'0 24px 60px rgba(15,23,42,0.12)' }}>
-                <div className="rounded-[2.4rem] overflow-hidden" style={{ background:'#FFFFFF', border:'1px solid #E2E8F0', minHeight:'420px' }}>
-                  <div className="p-4 pt-7">
-                    {/* Header */}
-                    <div className="flex justify-between items-center mb-5">
-                      <div>
-                        <p className="font-black text-base" style={{ color: '#0F172A' }}>Heute</p>
-                        <p className="text-[10px]" style={{ color: '#94A3B8' }}>Freitag, 25. April</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-pink-500 font-black text-xl">🔥 7</p>
-                        <p className="text-[10px]" style={{ color: '#94A3B8' }}>Tage Streak</p>
-                      </div>
-                    </div>
-
-                    {/* Progress ring */}
-                    <div className="flex justify-center mb-5">
-                      <div className="relative w-24 h-24">
-                        <svg viewBox="0 0 36 36" className="w-24 h-24 -rotate-90">
-                          <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(236,72,153,0.12)" strokeWidth="3" />
-                          <circle cx="18" cy="18" r="15.9" fill="none" stroke="url(#pink-grad)" strokeWidth="3"
-                            strokeDasharray="75 100" strokeLinecap="round" />
-                          <defs>
-                            <linearGradient id="pink-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#EC4899" />
-                              <stop offset="100%" stopColor="#8B5CF6" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center">
-                          <span className="font-black text-lg leading-none" style={{ color: '#0F172A' }}>75%</span>
-                          <span className="text-[8px]" style={{ color: '#94A3B8' }}>erledigt</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Goals */}
-                    {[
-                      { label:'30 min Sport', done:true, color:'#10B981' },
-                      { label:'Buch lesen', done:true, color:'#3B82F6' },
-                      { label:'Meditation', done:false, color:'#EC4899' },
-                      { label:'Kalt duschen', done:false, color:'#F59E0B' },
-                    ].map(g => (
-                      <div key={g.label} className="flex items-center gap-2.5 mb-2 px-3 py-2 rounded-xl"
-                        style={{ background:g.done ? `${g.color}10` : '#F8FAFC', border:`1px solid ${g.done ? g.color+'30' : '#E2E8F0'}` }}>
-                        <div className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center"
-                          style={{ background: g.done ? g.color : 'transparent', border: g.done ? 'none' : `2px solid ${g.color}60` }}>
-                          {g.done && <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
-                        </div>
-                        <span className={`text-[11px] font-medium ${g.done ? 'line-through' : ''}`}
-                          style={{ color: g.done ? '#94A3B8' : '#0F172A' }}>{g.label}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div className="rounded-[1.6rem] overflow-hidden" style={{ background:'#0D1526', border:'1px solid #E2E8F0' }}>
+                  <img src="/app/daily-goals.png" alt="Daily Goals App – Neues Ziel erstellen mit Vorlagen, Priorität und Kategorien"
+                    className="w-full h-auto block" loading="lazy" />
                 </div>
               </div>
             </motion.div>
