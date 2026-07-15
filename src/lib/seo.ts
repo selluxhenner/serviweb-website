@@ -6,11 +6,7 @@ export const SITE = {
   name: 'Serviweb',
   legalName: 'Serviweb – Kevin Schmid',
   url: 'https://www.serviweb.ch',
-<<<<<<< HEAD
   logo: 'https://www.serviweb.ch/logo.png',
-=======
-  logo: 'https://www.serviweb.ch/icon.svg',
->>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
   ogImage: 'https://www.serviweb.ch/og-image.jpg',
   email: 'info@serviweb.ch',
   phone: '+41795350603',

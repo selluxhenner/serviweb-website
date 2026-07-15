@@ -28,14 +28,14 @@ export default function DailyGoalsPage() {
       <div className="relative">
 
         {/* ── Hero ──────────────────────────────────────────────────────── */}
-        <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden" style={{ background:'#070B14' }}>
+        <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden" style={{ background:'#FFFFFF' }}>
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-[-100px] left-1/2 -translate-x-1/2  h-[600px] rounded-full"
-              style={{ background:'radial-gradient(circle,rgba(236,72,153,0.14) 0%,rgba(139,92,246,0.08) 50%,transparent 70%)', filter:'blur(80px)' }} />
+            <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full"
+              style={{ background:'radial-gradient(circle,rgba(236,72,153,0.06) 0%,rgba(37,99,235,0.04) 50%,transparent 70%)', filter:'blur(80px)' }} />
           </div>
 
           <div className="relative max-w-5xl mx-auto px-6 text-center">
-            <Link to="/projekte" className="mr-6 inline-flex items-center gap-2 text-sm text-slate-500 hover:text-slate-300 transition-colors mb-10 cursor-pointer">
+            <Link to="/projekte" className="mr-6 inline-flex items-center gap-2 text-sm transition-colors mb-10 cursor-pointer hover:opacity-80" style={{ color: '#64748B' }}>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
               Zurück zu Projekten
             </Link>
@@ -43,13 +43,13 @@ export default function DailyGoalsPage() {
             <motion.div initial={{ opacity:0, scale:0.9 }} animate={{ opacity:1, scale:1 }}
               transition={{ duration:0.6 }}
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8 text-sm font-bold"
-              style={{ background:'linear-gradient(135deg,rgba(236,72,153,0.15),rgba(139,92,246,0.1))', border:'1px solid rgba(236,72,153,0.35)', color:'#F9A8D4' }}>
-              <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse" />
+              style={{ background:'rgba(236,72,153,0.06)', border:'1px solid rgba(236,72,153,0.3)', color:'#BE185D' }}>
+              <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse" />
               In Entwicklung – Coming Soon
             </motion.div>
 
             <motion.h1 initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7, delay:0.1 }}
-              className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tight mb-6">
+              className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mb-6" style={{ color: '#1E3A8A' }}>
               Daily{' '}
               <span style={{ background:'linear-gradient(135deg,#EC4899,#8B5CF6)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
                 Goals
@@ -57,18 +57,18 @@ export default function DailyGoalsPage() {
             </motion.h1>
 
             <motion.p initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7, delay:0.2 }}
-              className="text-xl text-slate-400 leading-relaxed max-w-xl mx-auto mb-10">
+              className="text-xl leading-relaxed max-w-xl mx-auto mb-10" style={{ color: '#64748B' }}>
               Die App für tägliche Ziele, Gewohnheiten und persönliches Wachstum. Motivierend, simpel, effektiv.
             </motion.p>
 
             {/* Progress bar */}
             <motion.div initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.6, delay:0.3 }}
               className="max-w-sm mx-auto mb-10">
-              <div className="flex justify-between text-xs text-slate-500 mb-2">
+              <div className="flex justify-between text-xs mb-2" style={{ color: '#64748B' }}>
                 <span>Entwicklungsfortschritt</span>
                 <span>65%</span>
               </div>
-              <div className="h-2 rounded-full overflow-hidden" style={{ background:'rgba(255,255,255,0.06)' }}>
+              <div className="h-2 rounded-full overflow-hidden" style={{ background:'#E2E8F0' }}>
                 <motion.div
                   initial={{ width: 0 }} animate={{ width: '65%' }}
                   transition={{ duration: 1.4, delay: 0.8, ease: 'easeOut' }}
@@ -83,8 +83,8 @@ export default function DailyGoalsPage() {
                 {submitted ? (
                   <motion.div key="success"
                     initial={{ opacity:0, scale:0.95 }} animate={{ opacity:1, scale:1 }}
-                    className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl text-sm font-semibold text-emerald-400"
-                    style={{ background:'rgba(16,185,129,0.1)', border:'1px solid rgba(16,185,129,0.3)' }}>
+                    className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl text-sm font-semibold text-emerald-700"
+                    style={{ background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.35)' }}>
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                     Wir benachrichtigen dich beim Launch!
                   </motion.div>
@@ -94,34 +94,34 @@ export default function DailyGoalsPage() {
                     <input
                       type="email" required value={email} onChange={e => setEmail(e.target.value)}
                       placeholder="deine@email.ch"
-                      className="flex-1 px-5 py-3.5 rounded-2xl text-sm text-white placeholder-slate-600 outline-none transition-colors duration-200"
-                      style={{ background:'rgba(13,21,38,0.9)', border:'1px solid rgba(236,72,153,0.25)' }}
+                      className="flex-1 px-5 py-3.5 rounded-2xl text-sm placeholder-slate-400 outline-none transition-colors duration-200"
+                      style={{ background:'#FFFFFF', border:'1px solid #CBD5E1', color: '#0F172A' }}
                     />
                     <motion.button type="submit"
                       whileHover={{ y:-2 }} whileTap={{ scale:0.97 }}
                       className="px-6 py-3.5 rounded-2xl text-sm font-bold text-white cursor-pointer flex-shrink-0"
-                      style={{ background:'linear-gradient(135deg,#EC4899,#8B5CF6)', boxShadow:'0 4px 20px rgba(236,72,153,0.35)' }}>
+                      style={{ background:'linear-gradient(135deg,#EC4899,#8B5CF6)', boxShadow:'0 4px 16px rgba(236,72,153,0.25)' }}>
                       Beim Launch benachrichtigen
                     </motion.button>
                   </motion.form>
                 )}
               </AnimatePresence>
-              <p className="text-xs text-slate-600 mt-3">Kein Spam. Nur eine Nachricht beim Launch.</p>
+              <p className="text-xs mt-3" style={{ color: '#94A3B8' }}>Kein Spam. Nur eine Nachricht beim Launch.</p>
             </motion.div>
           </div>
         </section>
 
         {/* ── Feature Preview ───────────────────────────────────────────── */}
-        <section className="py-20 md:py-28" style={{ background:'#07101E' }}>
+        <section className="py-20 md:py-28" style={{ background:'#F1F5F9' }}>
           <div className="max-w-6xl mx-auto px-6">
             <motion.div initial={{ opacity:0, y:24 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true, margin:'-60px' }} transition={{ duration:0.7 }} className="mb-12 text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-semibold"
-                style={{ background:'rgba(236,72,153,0.1)', border:'1px solid rgba(236,72,153,0.25)', color:'#F9A8D4' }}>
+                style={{ background:'rgba(236,72,153,0.06)', border:'1px solid rgba(236,72,153,0.3)', color:'#BE185D' }}>
                 Feature-Vorschau
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-3">Was Daily Goals bieten wird</h2>
-              <p className="text-slate-400 max-w-md mx-auto">Alle geplanten Features auf einen Blick – entwickelt mit echtem Nutzerfeedback.</p>
+              <h2 className="text-3xl md:text-4xl font-black mb-3" style={{ color: '#1E3A8A' }}>Was Daily Goals bieten wird</h2>
+              <p className="max-w-md mx-auto" style={{ color: '#64748B' }}>Alle geplanten Features auf einen Blick – entwickelt mit echtem Nutzerfeedback.</p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -131,19 +131,19 @@ export default function DailyGoalsPage() {
                   viewport={{ once:true, margin:'-40px' }}
                   transition={{ duration:0.55, delay: i * 0.07 }}
                   className="rounded-2xl p-6 relative overflow-hidden"
-                  style={{ background:'rgba(13,21,38,0.76)', border:`1px solid ${f.color}18` }}>
+                  style={{ background:'#FFFFFF', border:'1px solid #E2E8F0' }}>
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                    style={{ background:`${f.color}14`, boxShadow:`0 0 18px ${f.color}25` }}>
+                    style={{ background:`${f.color}14` }}>
                     <svg className="w-5 h-5" style={{ color:f.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                       <path strokeLinecap="round" strokeLinejoin="round" d={f.icon} />
                     </svg>
                   </div>
-                  <h3 className="font-bold text-white mb-2">{f.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{f.desc}</p>
+                  <h3 className="font-bold mb-2" style={{ color: '#1E3A8A' }}>{f.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{f.desc}</p>
                   {/* Coming soon overlay hint */}
                   <div className="absolute top-3 right-3">
                     <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-md"
-                      style={{ background:`${f.color}20`, color:f.color }}>GEPLANT</span>
+                      style={{ background:`${f.color}18`, color:f.color }}>GEPLANT</span>
                   </div>
                 </motion.div>
               ))}
@@ -152,12 +152,12 @@ export default function DailyGoalsPage() {
         </section>
 
         {/* ── App Preview Mockup ────────────────────────────────────────── */}
-        <section className="py-20" style={{ background:'#070B14' }}>
+        <section className="py-20" style={{ background:'#FFFFFF' }}>
           <div className="max-w-6xl mx-auto px-6 text-center">
             <motion.div initial={{ opacity:0, y:24 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ duration:0.7 }} className="mb-12">
-              <h2 className="text-3xl font-black text-white mb-3">App-Vorschau</h2>
-              <p className="text-slate-500 text-sm">Frühe Design-Konzepte. Das finale Design kann abweichen.</p>
+              <h2 className="text-3xl font-black mb-3" style={{ color: '#1E3A8A' }}>App-Vorschau</h2>
+              <p className="text-sm" style={{ color: '#64748B' }}>Frühe Design-Konzepte. Das finale Design kann abweichen.</p>
             </motion.div>
 
             <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }}
@@ -165,22 +165,22 @@ export default function DailyGoalsPage() {
               className="inline-block relative">
               {/* Glow */}
               <div className="absolute inset-0 rounded-[3rem]"
-                style={{ background:'radial-gradient(ellipse,rgba(236,72,153,0.25) 0%,transparent 70%)', filter:'blur(40px)', transform:'scale(1.3)' }} />
+                style={{ background:'radial-gradient(ellipse,rgba(236,72,153,0.12) 0%,transparent 70%)', filter:'blur(40px)', transform:'scale(1.3)' }} />
 
               {/* Phone */}
               <div className="relative w-44 sm:w-56 rounded-[3rem] p-3"
-                style={{ background:'rgba(13,21,38,0.95)', border:'1px solid rgba(236,72,153,0.3)', boxShadow:'0 0 0 1px rgba(236,72,153,0.15), 0 40px 100px rgba(236,72,153,0.2)' }}>
-                <div className="rounded-[2.4rem] overflow-hidden" style={{ background:'#0A0F1E', minHeight:'420px' }}>
+                style={{ background:'#F1F5F9', border:'1px solid #E2E8F0', boxShadow:'0 24px 60px rgba(15,23,42,0.12)' }}>
+                <div className="rounded-[2.4rem] overflow-hidden" style={{ background:'#FFFFFF', border:'1px solid #E2E8F0', minHeight:'420px' }}>
                   <div className="p-4 pt-7">
                     {/* Header */}
                     <div className="flex justify-between items-center mb-5">
                       <div>
-                        <p className="text-white font-black text-base">Heute</p>
-                        <p className="text-[10px] text-slate-600">Freitag, 25. April</p>
+                        <p className="font-black text-base" style={{ color: '#0F172A' }}>Heute</p>
+                        <p className="text-[10px]" style={{ color: '#94A3B8' }}>Freitag, 25. April</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-pink-400 font-black text-xl">🔥 7</p>
-                        <p className="text-[10px] text-slate-600">Tage Streak</p>
+                        <p className="text-pink-500 font-black text-xl">🔥 7</p>
+                        <p className="text-[10px]" style={{ color: '#94A3B8' }}>Tage Streak</p>
                       </div>
                     </div>
 
@@ -188,7 +188,7 @@ export default function DailyGoalsPage() {
                     <div className="flex justify-center mb-5">
                       <div className="relative w-24 h-24">
                         <svg viewBox="0 0 36 36" className="w-24 h-24 -rotate-90">
-                          <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(236,72,153,0.1)" strokeWidth="3" />
+                          <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(236,72,153,0.12)" strokeWidth="3" />
                           <circle cx="18" cy="18" r="15.9" fill="none" stroke="url(#pink-grad)" strokeWidth="3"
                             strokeDasharray="75 100" strokeLinecap="round" />
                           <defs>
@@ -199,8 +199,8 @@ export default function DailyGoalsPage() {
                           </defs>
                         </svg>
                         <div className="absolute inset-0 flex flex-col items-center justify-center">
-                          <span className="text-white font-black text-lg leading-none">75%</span>
-                          <span className="text-[8px] text-slate-500">erledigt</span>
+                          <span className="font-black text-lg leading-none" style={{ color: '#0F172A' }}>75%</span>
+                          <span className="text-[8px]" style={{ color: '#94A3B8' }}>erledigt</span>
                         </div>
                       </div>
                     </div>
@@ -213,13 +213,13 @@ export default function DailyGoalsPage() {
                       { label:'Kalt duschen', done:false, color:'#F59E0B' },
                     ].map(g => (
                       <div key={g.label} className="flex items-center gap-2.5 mb-2 px-3 py-2 rounded-xl"
-                        style={{ background:g.done ? `${g.color}12` : 'rgba(255,255,255,0.03)', border:`1px solid ${g.done ? g.color+'25' : 'rgba(255,255,255,0.05)'}` }}>
+                        style={{ background:g.done ? `${g.color}10` : '#F8FAFC', border:`1px solid ${g.done ? g.color+'30' : '#E2E8F0'}` }}>
                         <div className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center"
-                          style={{ background: g.done ? g.color : 'transparent', border: g.done ? 'none' : `2px solid ${g.color}50` }}>
+                          style={{ background: g.done ? g.color : 'transparent', border: g.done ? 'none' : `2px solid ${g.color}60` }}>
                           {g.done && <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
                         </div>
-                        <span className={`text-[11px] font-medium ${g.done ? 'line-through' : 'text-slate-300'}`}
-                          style={{ color: g.done ? g.color + '80' : undefined }}>{g.label}</span>
+                        <span className={`text-[11px] font-medium ${g.done ? 'line-through' : ''}`}
+                          style={{ color: g.done ? '#94A3B8' : '#0F172A' }}>{g.label}</span>
                       </div>
                     ))}
                   </div>
@@ -230,31 +230,31 @@ export default function DailyGoalsPage() {
         </section>
 
         {/* ── Timeline ──────────────────────────────────────────────────── */}
-        <section className="py-16" style={{ background:'#07101E' }}>
+        <section className="py-16" style={{ background:'#F1F5F9' }}>
           <div className="max-w-3xl mx-auto px-6 text-center">
             <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ duration:0.6 }}>
-              <h2 className="text-2xl font-black text-white mb-8">Geplanter Launch</h2>
+              <h2 className="text-2xl font-black mb-8" style={{ color: '#1E3A8A' }}>Geplanter Launch</h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 {[
                   { phase:'Beta', date:'Q3 2026', status:'geplant', color:'#8B5CF6' },
-                  { phase:'App Store', date:'Q4 2026', status:'geplant', color:'#3B82F6' },
+                  { phase:'App Store', date:'Q4 2026', status:'geplant', color:'#2563EB' },
                   { phase:'Android', date:'Q4 2026', status:'geplant', color:'#10B981' },
                 ].map(p => (
                   <div key={p.phase} className="flex-1 rounded-2xl p-5"
-                    style={{ background:'rgba(13,21,38,0.76)', border:`1px solid ${p.color}20` }}>
+                    style={{ background:'#FFFFFF', border:'1px solid #E2E8F0' }}>
                     <div className="text-lg font-black mb-1" style={{ color:p.color }}>{p.phase}</div>
-                    <div className="text-white font-semibold text-sm mb-1">{p.date}</div>
-                    <div className="text-[10px] text-slate-600 uppercase tracking-wider">{p.status}</div>
+                    <div className="font-semibold text-sm mb-1" style={{ color: '#0F172A' }}>{p.date}</div>
+                    <div className="text-[10px] uppercase tracking-wider" style={{ color: '#94A3B8' }}>{p.status}</div>
                   </div>
                 ))}
               </div>
 
-              <p className="text-slate-500 text-sm mt-10 mb-4">Interesse an ähnlichen Apps?</p>
+              <p className="text-sm mt-10 mb-4" style={{ color: '#64748B' }}>Interesse an ähnlichen Apps?</p>
               <Link to="/kontakt">
                 <motion.span whileHover={{ y:-2 }} whileTap={{ scale:0.97 }}
                   className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-base font-bold text-white cursor-pointer"
-                  style={{ background:'linear-gradient(135deg,#EC4899,#8B5CF6)', boxShadow:'0 4px 24px rgba(236,72,153,0.35)', display:'inline-flex' }}>
+                  style={{ background:'linear-gradient(135deg,#EC4899,#8B5CF6)', boxShadow:'0 4px 16px rgba(236,72,153,0.25)', display:'inline-flex' }}>
                   App-Projekt besprechen
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </motion.span>

@@ -48,7 +48,7 @@ function SpotlightCard({ children, href, to, className, style }: {
   const ref = useRef<HTMLDivElement>(null)
   const mx = useMotionValue(-300)
   const my = useMotionValue(-300)
-  const spotlight = useMotionTemplate`radial-gradient(240px circle at ${mx}px ${my}px, rgba(59,130,246,0.12), transparent 70%)`
+  const spotlight = useMotionTemplate`radial-gradient(240px circle at ${mx}px ${my}px, rgba(37,99,235,0.06), transparent 70%)`
 
   const onMove = (e: React.MouseEvent) => {
     const r = ref.current!.getBoundingClientRect()
@@ -64,7 +64,7 @@ function SpotlightCard({ children, href, to, className, style }: {
       style={style}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      whileHover={{ y: -4, borderColor: 'rgba(59,130,246,0.38)' }}
+      whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(15,23,42,0.1)' }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
     >
       {children}
@@ -256,8 +256,12 @@ const gridItem: Variants = {
 // ── Cards ─────────────────────────────────────────────────────────────────────
 
 const cardStyle: React.CSSProperties = {
-  background: 'rgba(13,21,38,0.76)', border: '1px solid rgba(59,130,246,0.1)',
-  backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)',
+  background: '#FFFFFF', border: '1px solid #E2E8F0',
+  boxShadow: '0 1px 3px rgba(15,23,42,0.05)',
+}
+
+const featureTagStyle: React.CSSProperties = {
+  color: '#64748B', background: '#F1F5F9', border: '1px solid #E2E8F0',
 }
 
 function WebCard({ p }: { p: typeof WEBSITES[0] }) {
@@ -271,13 +275,12 @@ function WebCard({ p }: { p: typeof WEBSITES[0] }) {
             className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[rgba(13,21,38,0.9)] to-transparent pointer-events-none" />
-          <div className="absolute top-3 right-3 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-white/10 text-white/70 bg-black/40"
+          <div className="absolute top-3 right-3 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-white/10 text-white/80 bg-black/40"
             style={{ backdropFilter: 'blur(6px)' }}>
             {p.category}
           </div>
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ background: 'rgba(7,11,20,0.62)' }}>
+            style={{ background: 'rgba(30,58,138,0.6)' }}>
             <span className="text-white text-sm font-semibold flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -287,15 +290,15 @@ function WebCard({ p }: { p: typeof WEBSITES[0] }) {
           </div>
         </div>
         <div className="p-6">
-          <h3 className="font-bold text-white text-lg leading-tight mb-0.5">{p.name}</h3>
-          <p className="text-xs text-slate-500 mb-3">{p.subtitle}</p>
-          <p className="text-sm text-slate-400 leading-relaxed mb-4">{p.desc}</p>
+          <h3 className="font-bold text-lg leading-tight mb-0.5" style={{ color: '#1E3A8A' }}>{p.name}</h3>
+          <p className="text-xs mb-3" style={{ color: '#64748B' }}>{p.subtitle}</p>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: '#64748B' }}>{p.desc}</p>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {p.features.map(f => (
-              <span key={f} className="text-[10px] text-slate-500 px-2 py-0.5 rounded-md bg-slate-800/60 border border-slate-700/40">{f}</span>
+              <span key={f} className="text-[10px] px-2 py-0.5 rounded-md" style={featureTagStyle}>{f}</span>
             ))}
           </div>
-          <p className="text-[11px] text-blue-400/70 font-medium">{p.url}</p>
+          <p className="text-[11px] font-medium" style={{ color: '#2563EB' }}>{p.url}</p>
         </div>
       </SpotlightCard>
     </motion.div>
@@ -313,13 +316,12 @@ function TemplateCard({ p }: { p: typeof TEMPLATES[0] }) {
             className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[rgba(13,21,38,0.9)] to-transparent pointer-events-none" />
-          <div className="absolute top-3 right-3 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-white/10 text-white/70 bg-black/40"
+          <div className="absolute top-3 right-3 text-[10px] font-semibold px-2.5 py-1 rounded-full border border-white/10 text-white/80 bg-black/40"
             style={{ backdropFilter: 'blur(6px)' }}>
             {p.category}
           </div>
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ background: 'rgba(7,11,20,0.62)' }}>
+            style={{ background: 'rgba(30,58,138,0.6)' }}>
             <span className="text-white text-sm font-semibold flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -329,15 +331,15 @@ function TemplateCard({ p }: { p: typeof TEMPLATES[0] }) {
           </div>
         </div>
         <div className="p-6">
-          <h3 className="font-bold text-white text-lg leading-tight mb-0.5">{p.name}</h3>
-          <p className="text-xs text-slate-500 mb-3">{p.subtitle}</p>
-          <p className="text-sm text-slate-400 leading-relaxed mb-4">{p.desc}</p>
+          <h3 className="font-bold text-lg leading-tight mb-0.5" style={{ color: '#1E3A8A' }}>{p.name}</h3>
+          <p className="text-xs mb-3" style={{ color: '#64748B' }}>{p.subtitle}</p>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: '#64748B' }}>{p.desc}</p>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {p.features.map(f => (
-              <span key={f} className="text-[10px] text-slate-500 px-2 py-0.5 rounded-md bg-slate-800/60 border border-slate-700/40">{f}</span>
+              <span key={f} className="text-[10px] px-2 py-0.5 rounded-md" style={featureTagStyle}>{f}</span>
             ))}
           </div>
-          <p className="text-[11px] text-blue-400/70 font-medium">{p.url}</p>
+          <p className="text-[11px] font-medium" style={{ color: '#2563EB' }}>{p.url}</p>
         </div>
       </SpotlightCard>
     </motion.div>
@@ -356,15 +358,14 @@ function AppCard({ p }: { p: typeof APPS[0] }) {
             className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-[rgba(13,21,38,0.9)] to-transparent pointer-events-none" />
           {p.comingSoon && (
-            <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-300 border border-amber-400/30 bg-amber-400/10">
+            <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold text-amber-700 border border-amber-300 bg-amber-100">
               Coming Soon
             </div>
           )}
           {p.detailPath && !p.comingSoon && (
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{ background: 'rgba(7,11,20,0.62)' }}>
+              style={{ background: 'rgba(30,58,138,0.6)' }}>
               <span className="text-white text-sm font-semibold flex items-center gap-2">
                 Details ansehen
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -375,23 +376,25 @@ function AppCard({ p }: { p: typeof APPS[0] }) {
           )}
         </div>
         <div className="p-6">
-          <h3 className="font-bold text-white text-lg leading-tight mb-0.5">{p.name}</h3>
-          <p className="text-xs text-slate-500 mb-3">{p.subtitle}</p>
-          <p className="text-sm text-slate-400 leading-relaxed mb-4">{p.desc}</p>
+          <h3 className="font-bold text-lg leading-tight mb-0.5" style={{ color: '#1E3A8A' }}>{p.name}</h3>
+          <p className="text-xs mb-3" style={{ color: '#64748B' }}>{p.subtitle}</p>
+          <p className="text-sm leading-relaxed mb-4" style={{ color: '#64748B' }}>{p.desc}</p>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {p.tags.map(t => (
-              <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-blue-500/20 bg-blue-500/8 text-blue-300">{t}</span>
+              <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-lg border"
+                style={{ borderColor: 'rgba(37,99,235,0.2)', background: 'rgba(37,99,235,0.06)', color: '#2563EB' }}>{t}</span>
             ))}
           </div>
           {p.store ? (p.comingSoon ? (
-            <span className="text-xs text-slate-600 italic">Demnächst im App Store & Play Store</span>
+            <span className="text-xs italic" style={{ color: '#94A3B8' }}>Demnächst im App Store & Play Store</span>
           ) : (
             <div className="flex gap-2">
               {[['M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z', 'App Store'],
               ['M3.18 23.76c.4.22.87.22 1.27 0l9.9-5.62v-3.5L3.18 23.76zM21.83 10.5c-.4-.22-.87-.22-1.27 0l-1.38.8-3.51 2L21.83 10.5zM3.18.24C2.78.46 2.5.88 2.5 1.34v21.32c0 .46.28.88.68 1.1l11.17-11.88L3.18.24zm17.38 9.16l-2.16-1.23-3.17-1.8L3.95.04l-.77-.04 13.23 11.89 4-2.23z', 'Play Store']].map(([d, label]) => (
-                <div key={label} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/40">
-                  <svg className="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg>
-                  <span className="text-[10px] text-slate-400 font-medium">{label}</span>
+                <div key={label} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border"
+                  style={{ background: '#F1F5F9', borderColor: '#E2E8F0' }}>
+                  <svg className="w-3.5 h-3.5" style={{ color: '#64748B' }} viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg>
+                  <span className="text-[10px] font-medium" style={{ color: '#64748B' }}>{label}</span>
                 </div>
               ))}
             </div>
@@ -409,10 +412,10 @@ function FeaturedVocafy() {
     <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
       <Link to="/projekte/vocafy" className="block group cursor-pointer">
         <motion.div
-          whileHover={{ y: -4, borderColor: 'rgba(59,130,246,0.38)' }}
+          whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(15,23,42,0.1)' }}
           transition={{ duration: 0.22, ease: 'easeOut' }}
           className="rounded-2xl overflow-hidden"
-          style={{ background: 'rgba(13,21,38,0.76)', border: '1px solid rgba(59,130,246,0.15)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
+          style={cardStyle}
         >
           <div className="flex flex-col md:flex-row" style={{ minHeight: 300 }}>
             {/* Image */}
@@ -420,12 +423,12 @@ function FeaturedVocafy() {
               <img src={vocafyImg} alt="Vocafy"
                 className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 pointer-events-none hidden md:block"
-                style={{ background: 'linear-gradient(to right, transparent 55%, rgba(13,21,38,0.92) 100%)' }} />
+                style={{ background: 'linear-gradient(to right, transparent 55%, rgba(255,255,255,0.95) 100%)' }} />
               <div className="absolute inset-x-0 bottom-0 h-20 pointer-events-none md:hidden"
-                style={{ background: 'linear-gradient(to top, rgba(13,21,38,1) 0%, transparent 100%)' }} />
+                style={{ background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, transparent 100%)' }} />
               <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-amber-300"
-                  style={{ background: 'rgba(245,158,11,0.12)', border: '1px solid rgba(245,158,11,0.3)', backdropFilter: 'blur(8px)' }}>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-amber-700"
+                  style={{ background: 'rgba(255,251,235,0.9)', border: '1px solid rgba(245,158,11,0.4)', backdropFilter: 'blur(8px)' }}>
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                   </svg>
@@ -436,30 +439,31 @@ function FeaturedVocafy() {
             {/* Content */}
             <div className="flex-1 p-6 md:p-8 lg:p-12 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4 w-fit"
-                style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.25)', color: '#93C5FD' }}>
+                style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)', color: '#2563EB' }}>
                 Web & Mobile · Eigenes Projekt
               </div>
-              <h3 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-2">
-                Voca<span style={{ background: 'linear-gradient(135deg,#3B82F6,#8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>fy</span>
+              <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-2" style={{ color: '#1E3A8A' }}>
+                Voca<span style={{ color: '#2563EB' }}>fy</span>
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-5 max-w-lg">
+              <p className="text-sm leading-relaxed mb-5 max-w-lg" style={{ color: '#64748B' }}>
                 Interaktive Lernplattform zum Erstellen und Üben von Vokabeln – mit Benutzerkonten, Fortschrittsverfolgung und eigenem Learning-Algorithmus. Verfügbar im App Store und Google Play.
               </p>
               <div className="flex flex-wrap gap-1.5 mb-6">
                 {['Node.js', 'React', 'MySQL', 'iOS & Android', 'Benutzerkonten', 'Spaced Repetition'].map(t => (
-                  <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-blue-500/20 bg-blue-500/8 text-blue-300">{t}</span>
+                  <span key={t} className="text-[10px] font-semibold px-2.5 py-1 rounded-lg border"
+                    style={{ borderColor: 'rgba(37,99,235,0.2)', background: 'rgba(37,99,235,0.06)', color: '#2563EB' }}>{t}</span>
                 ))}
               </div>
               <div className="flex items-center gap-4 flex-wrap">
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400">
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: '#2563EB' }}>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
                     </svg>
                   vocafy.ch
                 </span>
-                <span className="text-slate-700">·</span>
-                <span className="text-sm text-slate-500 group-hover:text-slate-300 transition-colors flex items-center gap-1.5">
+                <span style={{ color: '#CBD5E1' }}>·</span>
+                <span className="text-sm transition-colors flex items-center gap-1.5" style={{ color: '#64748B' }}>
                   Zum Projekt
                   <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -496,26 +500,16 @@ export default function ProjectsPage() {
       />
       <div className="relative py-20 md:py-28">
 
-        {/* Background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2  h-[500px] pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse,rgba(59,130,246,0.07) 0%,transparent 70%)', filter: 'blur(80px)' }} />
-
         <div className="relative max-w-6xl mx-auto px-6">
 
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
             className="mb-12">
-            <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">Portfolio</p>
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight mb-4">
-              Alle{' '}
-              <span style={{
-                background: 'linear-gradient(135deg,#93C5FD 0%,#A78BFA 100%)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'
-              }}>
-                Projekte
-              </span>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#64748B' }}>Portfolio</p>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4" style={{ color: '#1E3A8A' }}>
+              Alle <span style={{ color: '#2563EB' }}>Projekte</span>
             </h1>
-            <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
+            <p className="text-lg max-w-2xl leading-relaxed" style={{ color: '#64748B' }}>
               Websites für lokale Unternehmen in der Ostschweiz und eigene Mobile-Apps – hier siehst du, was ich bisher gebaut habe.
             </p>
           </motion.div>
@@ -524,15 +518,15 @@ export default function ProjectsPage() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
             className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
             {[
-              { value: '6', label: 'Kundenwebsites', color: '#3B82F6' },
-              { value: '4', label: 'Eigene Apps', color: '#8B5CF6' },
-              { value: '50+', label: 'Projekte gesamt', color: '#06B6D4' },
-              { value: '100%', label: 'Zufriedene Kunden', color: '#10B981' },
+              { value: '6', label: 'Kundenwebsites' },
+              { value: '4', label: 'Eigene Apps' },
+              { value: '50+', label: 'Projekte gesamt' },
+              { value: '100%', label: 'Zufriedene Kunden' },
             ].map(s => (
               <div key={s.label} className="rounded-2xl p-3 sm:p-5 text-center"
-                style={{ background: 'rgba(13,21,38,0.76)', border: '1px solid rgba(59,130,246,0.1)' }}>
-                <div className="text-2xl sm:text-3xl font-black mb-1" style={{ color: s.color }}>{s.value}</div>
-                <div className="text-xs text-slate-500 font-medium">{s.label}</div>
+                style={{ background: '#F1F5F9', border: '1px solid #E2E8F0' }}>
+                <div className="text-2xl sm:text-3xl font-black mb-1" style={{ color: '#2563EB' }}>{s.value}</div>
+                <div className="text-xs font-medium" style={{ color: '#64748B' }}>{s.label}</div>
               </div>
             ))}
           </motion.div>
@@ -540,21 +534,21 @@ export default function ProjectsPage() {
           {/* Tabs */}
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
             className="flex flex-wrap items-center gap-2 mb-10 p-1.5 rounded-2xl w-fit"
-            style={{ background: 'rgba(13,21,38,0.7)', border: '1px solid rgba(59,130,246,0.12)' }}
+            style={{ background: '#F1F5F9', border: '1px solid #E2E8F0' }}
             role="tablist">
             {TABS.map(tab => (
               <button key={tab.id} role="tab" aria-selected={activeTab === tab.id}
                 onClick={() => setActiveTab(tab.id as 'websites' | 'apps' | 'featured')}
                 className="relative px-5 py-2.5 rounded-xl text-sm font-semibold cursor-pointer transition-colors duration-200"
-                style={{ color: activeTab === tab.id ? 'white' : 'rgba(148,163,184,0.8)' }}>
+                style={{ color: activeTab === tab.id ? '#FFFFFF' : '#64748B' }}>
                 {activeTab === tab.id && (
                   <motion.div layoutId="page-tab-pill" className="absolute inset-0 rounded-xl"
-                    style={{ background: 'linear-gradient(135deg,#2563EB,#3B82F6)', boxShadow: '0 4px 16px rgba(37,99,235,0.4)' }}
+                    style={{ background: '#2563EB', boxShadow: '0 4px 12px rgba(37,99,235,0.25)' }}
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }} />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
                   {tab.label}
-                  <span className={`text-xs px-1.5 py-0.5 rounded-md font-bold ${activeTab === tab.id ? 'bg-white/20' : 'bg-slate-700/60'}`}>
+                  <span className={`text-xs px-1.5 py-0.5 rounded-md font-bold ${activeTab === tab.id ? 'bg-white/20' : 'bg-slate-200'}`}>
                     {tab.count}
                   </span>
                 </span>
@@ -570,7 +564,7 @@ export default function ProjectsPage() {
                   initial="hidden" animate="visible" variants={grid}>
                   {WEBSITES.map(p => <WebCard key={p.name} p={p} />)}
                 </motion.div>
-                <p className="mt-8 text-center text-sm text-slate-600">
+                <p className="mt-8 text-center text-sm" style={{ color: '#94A3B8' }}>
                   Klick auf eine Website-Karte, um die live Website zu besuchen.
                 </p>
               </motion.div>
@@ -581,7 +575,7 @@ export default function ProjectsPage() {
                   initial="hidden" animate="visible" variants={grid}>
                   {APPS.map(p => <AppCard key={p.name} p={p} />)}
                 </motion.div>
-                <p className="mt-8 text-center text-sm text-slate-600">
+                <p className="mt-8 text-center text-sm" style={{ color: '#94A3B8' }}>
                   Apps mit Detail-Seite zeigen beim Hover einen Pfeil — klick drauf für mehr Infos.
                 </p>
               </motion.div>
@@ -589,7 +583,7 @@ export default function ProjectsPage() {
             {activeTab === 'featured' && (
               <motion.div key="featured" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
                 <FeaturedVocafy />
-                <p className="mt-6 text-center text-xs text-slate-600">
+                <p className="mt-6 text-center text-xs" style={{ color: '#94A3B8' }}>
                   Weitere Featured-Projekte folgen.
                 </p>
               </motion.div>
@@ -600,7 +594,7 @@ export default function ProjectsPage() {
                   initial="hidden" animate="visible" variants={grid}>
                   {TEMPLATES.map(p => <TemplateCard key={p.name} p={p} />)}
                 </motion.div>
-                <p className="mt-8 text-center text-sm text-slate-600">
+                <p className="mt-8 text-center text-sm" style={{ color: '#94A3B8' }}>
                   Klick auf eine Vorlage, um sie zu sehen.
                 </p>
               </motion.div>
@@ -613,15 +607,15 @@ export default function ProjectsPage() {
             className="mt-20 text-center">
             <div className="rounded-3xl p-6 sm:p-10 md:p-14"
               style={{
-                background: 'linear-gradient(135deg,rgba(37,99,235,0.12) 0%,rgba(139,92,246,0.08) 100%)',
-                border: '1px solid rgba(59,130,246,0.2)'
+                background: '#F1F5F9',
+                border: '1px solid #E2E8F0'
               }}>
-              <h2 className="text-2xl md:text-3xl font-black text-white mb-3">Dein Projekt hier?</h2>
-              <p className="text-slate-400 mb-8 max-w-md mx-auto">Lass uns gemeinsam etwas aufbauen – Website, App oder beides.</p>
+              <h2 className="text-2xl md:text-3xl font-black mb-3" style={{ color: '#1E3A8A' }}>Dein Projekt hier?</h2>
+              <p className="mb-8 max-w-md mx-auto" style={{ color: '#64748B' }}>Lass uns gemeinsam etwas aufbauen – Website, App oder beides.</p>
               <Link to="/kontakt">
                 <motion.span whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-base font-bold text-white cursor-pointer"
-                  style={{ background: 'linear-gradient(135deg,#2563EB,#3B82F6)', boxShadow: '0 4px 24px rgba(37,99,235,0.45)', display: 'inline-flex' }}>
+                  style={{ background: '#2563EB', boxShadow: '0 4px 16px rgba(37,99,235,0.25)', display: 'inline-flex' }}>
                   Projekt starten
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </motion.span>

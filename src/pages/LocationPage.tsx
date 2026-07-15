@@ -46,27 +46,24 @@ export default function LocationPage({ data }: { data: LocationData }) {
       <Breadcrumbs items={[{ name: `Webdesign ${data.city}`, url: data.slug }]} />
 
       {/* ── Hero / extractable answer ─────────────────────────────────── */}
-      <section className="relative py-16 md:py-24" style={{ background: '#070B14' }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[420px] w-full pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 60% 100% at 50% 0%,rgba(59,130,246,0.1) 0%,transparent 70%)', filter: 'blur(60px)' }}
-          aria-hidden="true" />
+      <section className="relative py-16 md:py-24" style={{ background: '#FFFFFF' }}>
         <div className="relative max-w-3xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <p className="text-xs font-semibold tracking-widest text-blue-400 uppercase mb-4">Webagentur · {data.city}</p>
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-[1.1] mb-6">{data.h1}</h1>
-            <p className="text-lg text-slate-300 leading-relaxed mb-5">{data.lead}</p>
+            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#2563EB' }}>Webagentur · {data.city}</p>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] mb-6" style={{ color: '#1E3A8A' }}>{data.h1}</h1>
+            <p className="text-lg leading-relaxed mb-5" style={{ color: '#0F172A' }}>{data.lead}</p>
             {data.intro.map((p) => (
-              <p key={p} className="text-base text-slate-400 leading-relaxed mb-4">{p}</p>
+              <p key={p} className="text-base leading-relaxed mb-4" style={{ color: '#64748B' }}>{p}</p>
             ))}
             <div className="flex flex-wrap gap-4 mt-8">
               <Link to="/kontakt"
                 className="inline-flex items-center gap-2.5 px-7 py-4 rounded-2xl text-base font-bold text-white cursor-pointer"
-                style={{ background: 'linear-gradient(135deg,#2563EB 0%,#3B82F6 60%,#1D4ED8 100%)', boxShadow: '0 4px 28px rgba(37,99,235,0.5)' }}>
+                style={{ background: '#2563EB', boxShadow: '0 4px 20px rgba(37,99,235,0.3)' }}>
                 Kostenlose Beratung <Arrow />
               </Link>
               <Link to="/projekte"
-                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-2xl text-base font-bold text-slate-300 cursor-pointer"
-                style={{ border: '1px solid rgba(59,130,246,0.32)', background: 'rgba(59,130,246,0.08)' }}>
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-2xl text-base font-bold cursor-pointer"
+                style={{ border: '1px solid #CBD5E1', background: '#FFFFFF', color: '#1E3A8A' }}>
                 Referenzen ansehen
               </Link>
             </div>
@@ -75,7 +72,7 @@ export default function LocationPage({ data }: { data: LocationData }) {
       </section>
 
       {/* ── Highlights ────────────────────────────────────────────────── */}
-      <section className="relative py-16 md:py-20" style={{ background: '#07101E' }}>
+      <section className="relative py-16 md:py-20" style={{ background: '#F1F5F9' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {data.highlights.map((h) => (
@@ -83,9 +80,9 @@ export default function LocationPage({ data }: { data: LocationData }) {
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5 }}
                 className="rounded-2xl p-6"
-                style={{ background: 'rgba(13,21,38,0.72)', border: '1px solid rgba(59,130,246,0.12)' }}>
-                <h2 className="text-lg font-bold text-white mb-2">{h.title}</h2>
-                <p className="text-sm text-slate-400 leading-relaxed">{h.body}</p>
+                style={{ background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+                <h2 className="text-lg font-bold mb-2" style={{ color: '#1E3A8A' }}>{h.title}</h2>
+                <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{h.body}</p>
               </motion.article>
             ))}
           </div>
@@ -93,46 +90,46 @@ export default function LocationPage({ data }: { data: LocationData }) {
       </section>
 
       {/* ── Services + local context ──────────────────────────────────── */}
-      <section className="relative py-16 md:py-24" style={{ background: '#070B14' }}>
+      <section className="relative py-16 md:py-24" style={{ background: '#FFFFFF' }}>
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-5">Leistungen in {data.city}</h2>
+            <h2 className="text-2xl md:text-3xl font-black mb-5" style={{ color: '#1E3A8A' }}>Leistungen in {data.city}</h2>
             <ul className="space-y-3" role="list">
               {SERVICES_IN_REGION.map((s) => (
                 <li key={s.to}>
                   <Link to={s.to}
-                    className="flex items-center justify-between gap-4 rounded-xl px-5 py-4 text-slate-300 hover:text-white transition-colors group"
-                    style={{ background: 'rgba(13,21,38,0.6)', border: '1px solid rgba(59,130,246,0.1)' }}>
+                    className="flex items-center justify-between gap-4 rounded-xl px-5 py-4 transition-colors group hover:border-blue-300"
+                    style={{ background: '#F1F5F9', border: '1px solid #E2E8F0', color: '#0F172A' }}>
                     <span className="text-sm font-semibold">{s.label}</span>
-                    <span className="text-blue-400 group-hover:translate-x-0.5 transition-transform"><Arrow /></span>
+                    <span className="group-hover:translate-x-0.5 transition-transform" style={{ color: '#2563EB' }}><Arrow /></span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-5">Region {data.city}</h2>
-            <p className="text-sm text-slate-400 leading-relaxed mb-5">
+            <h2 className="text-2xl md:text-3xl font-black mb-5" style={{ color: '#1E3A8A' }}>Region {data.city}</h2>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: '#64748B' }}>
               Serviweb betreut Unternehmen in {data.city} und Umgebung – unter anderem in:
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
               {data.nearby.map((n) => (
-                <span key={n} className="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300"
-                  style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.18)' }}>{n}</span>
+                <span key={n} className="px-3 py-1.5 rounded-lg text-xs font-medium"
+                  style={{ background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)', color: '#1E3A8A' }}>{n}</span>
               ))}
             </div>
-            <div className="rounded-2xl p-6" style={{ background: 'rgba(13,21,38,0.72)', border: '1px solid rgba(59,130,246,0.12)' }}>
-              <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-3">Weitere Regionen</p>
+            <div className="rounded-2xl p-6" style={{ background: '#F1F5F9', border: '1px solid #E2E8F0' }}>
+              <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#64748B' }}>Weitere Regionen</p>
               <ul className="space-y-2" role="list">
                 {others.map((o) => (
                   <li key={o.slug}>
-                    <Link to={o.slug} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                    <Link to={o.slug} className="text-sm transition-colors hover:opacity-80" style={{ color: '#2563EB' }}>
                       Webdesign {o.city}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link to="/leistungen" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                  <Link to="/leistungen" className="text-sm transition-colors hover:opacity-80" style={{ color: '#2563EB' }}>
                     Alle Leistungen ansehen
                   </Link>
                 </li>
@@ -145,17 +142,17 @@ export default function LocationPage({ data }: { data: LocationData }) {
       <FAQ items={data.faq} title={`Häufige Fragen – Webdesign ${data.city}`} />
 
       {/* ── CTA ───────────────────────────────────────────────────────── */}
-      <section className="relative py-20 md:py-24 text-center" style={{ background: '#070B14' }}>
+      <section className="relative py-20 md:py-24 text-center" style={{ background: '#FFFFFF' }}>
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-black mb-4" style={{ color: '#1E3A8A' }}>
             Bereit für Ihre neue Website in {data.city}?
           </h2>
-          <p className="text-slate-400 mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed" style={{ color: '#64748B' }}>
             Kostenlose und unverbindliche Erstberatung – direkt mit Kevin Schmid. Antwort meist innerhalb von 24 Stunden.
           </p>
           <Link to="/kontakt"
             className="inline-flex items-center gap-2.5 px-9 py-5 rounded-2xl text-base font-bold text-white cursor-pointer"
-            style={{ background: 'linear-gradient(135deg,#2563EB 0%,#3B82F6 60%,#1D4ED8 100%)', boxShadow: '0 6px 32px rgba(37,99,235,0.55)' }}>
+            style={{ background: '#2563EB', boxShadow: '0 6px 24px rgba(37,99,235,0.3)' }}>
             Projekt starten <Arrow />
           </Link>
         </div>

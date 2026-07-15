@@ -6,23 +6,13 @@
 
 body {
   margin: 0;
-<<<<<<< HEAD
   background-color: #FFFFFF;
   color: #0F172A;
-=======
-  background-color: #070B14;
-  color: #F8FAFC;
->>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-<<<<<<< HEAD
 ::-webkit-scrollbar-track { background: #F1F5F9; }
 ::-webkit-scrollbar-thumb { background: rgba(37,99,235,0.35); border-radius: 3px; }
-=======
-::-webkit-scrollbar-track { background: #070B14; }
-::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.3); border-radius: 3px; }
->>>>>>> 86a17aa693b6f0eba0f19f692bd96f1fb586f8f2

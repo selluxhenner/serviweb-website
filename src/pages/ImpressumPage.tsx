@@ -4,8 +4,8 @@ import SEO from '../components/SEO'
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mb-10">
-    <h2 className="text-lg font-bold text-white mb-3">{title}</h2>
-    <div className="text-sm text-slate-400 leading-relaxed space-y-2">{children}</div>
+    <h2 className="text-lg font-bold mb-3" style={{ color: '#1E3A8A' }}>{title}</h2>
+    <div className="text-sm leading-relaxed space-y-2" style={{ color: '#64748B' }}>{children}</div>
   </div>
 )
 
@@ -13,9 +13,7 @@ export default function ImpressumPage() {
   return (
     <PageLayout>
       <SEO title="Impressum" description="Impressum von Serviweb – Kevin Schmid, Webdesign und App-Entwicklung in der Ostschweiz." canonical="/impressum" noIndex={true} />
-      <div className="relative py-20 md:py-28" style={{ background: '#070B14', minHeight: '100vh' }}>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[400px] pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse,rgba(59,130,246,0.06) 0%,transparent 70%)', filter: 'blur(80px)' }} />
+      <div className="relative py-20 md:py-28" style={{ background: '#FFFFFF', minHeight: '100vh' }}>
 
         <div className="relative max-w-3xl mx-auto px-6">
           <motion.div
@@ -24,20 +22,19 @@ export default function ImpressumPage() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">Rechtliches</p>
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white leading-tight mb-10">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-10" style={{ color: '#1E3A8A' }}>
               Impressum
             </h1>
 
             <div
               className="rounded-2xl p-8 md:p-10"
               style={{
-                background: 'rgba(13,21,38,0.72)',
-                border: '1px solid rgba(59,130,246,0.1)',
-                backdropFilter: 'blur(16px)',
+                background: '#F1F5F9',
+                border: '1px solid #E2E8F0',
               }}
             >
               <Section title="Angaben gemäss Informationspflicht">
-                <p><span className="text-slate-300 font-medium">Kevin Schmid</span></p>
+                <p><span className="font-medium" style={{ color: '#0F172A' }}>Kevin Schmid</span></p>
                 <p>Serviweb</p>
                 <p>Ostschweiz, Schweiz</p>
               </Section>
@@ -45,19 +42,19 @@ export default function ImpressumPage() {
               <Section title="Kontakt">
                 <p>
                   <span className="text-slate-500">Telefon:</span>{' '}
-                  <a href="tel:+41795350603" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="tel:+41795350603" className="text-blue-600 hover:text-blue-800 transition-colors">
                     +41 79 535 06 03
                   </a>
                 </p>
                 <p>
                   <span className="text-slate-500">E-Mail:</span>{' '}
-                  <a href="mailto:info@serviweb.ch" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="mailto:info@serviweb.ch" className="text-blue-600 hover:text-blue-800 transition-colors">
                     info@serviweb.ch
                   </a>
                 </p>
                 <p>
                   <span className="text-slate-500">Website:</span>{' '}
-                  <a href="https://serviweb.ch" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="https://serviweb.ch" className="text-blue-600 hover:text-blue-800 transition-colors">
                     serviweb.ch
                   </a>
                 </p>
@@ -91,7 +88,7 @@ export default function ImpressumPage() {
                 </p>
               </Section>
 
-              <p className="text-xs text-slate-600 pt-4 border-t border-blue-500/[0.08]">
+              <p className="text-xs text-slate-600 pt-4 border-t border-slate-200">
                 Stand: April 2025
               </p>
             </div>
