@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    Per-route SEO tags (title, description, canonical, robots, Open Graph,
+    Twitter, per-page JSON-LD) are rendered by <SEO /> via react-helmet-async
+    and baked in here at build time by scripts/prerender.mjs. Do NOT add a
+    static <title> or meta description back — it would duplicate them.
+  -->
+  <!--app-head-->
+
+  <meta name="geo.position" content="47.4245;9.3767" />
+  <meta name="ICBM" content="47.4245, 9.3767" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!--
+    Connected entity graph (Organization · LocalBusiness · Person · WebSite).
+    Shared @id anchors let Google and AI engines merge these into one Serviweb entity.
+    ⚠️ Strengthen the brand entity by adding REAL profile URLs to every "sameAs": []
+       below (LinkedIn, Instagram, GitHub, Google Business Profile). See SEO-AUDIT.md.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.serviweb.ch/#organization",
+        "name": "Serviweb",
+        "legalName": "Serviweb – Kevin Schmid",
+        "alternateName": "Serviweb Webagentur Ostschweiz",
+        "url": "https://www.serviweb.ch",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.serviweb.ch/logo.png",
+          "caption": "Serviweb"
+        },
+        "image": "https://www.serviweb.ch/og-image.jpg",
+        "email": "info@serviweb.ch",
+        "telephone": "+41795350603",
+        "description": "Serviweb ist eine persönliche Webagentur aus der Ostschweiz, die moderne Websites und Apps mit React und Next.js für lokale Unternehmen entwickelt.",
+        "slogan": "Webdesign & Webagentur aus der Ostschweiz",
+        "founder": { "@id": "https://www.serviweb.ch/#kevin-schmid" },
+        "foundingLocation": { "@type": "Place", "name": "Ostschweiz, Schweiz" },
+        "knowsAbout": ["Webdesign", "Webentwicklung", "React", "Next.js", "App-Entwicklung", "SEO", "Local SEO", "Fotografie"],
+        "areaServed": ["St. Gallen", "Wil", "Toggenburg", "Ostschweiz", "Thurgau", "Appenzell", "Schweiz"],
+        "sameAs": [
+          "https://www.instagram.com/serviweb.ch",
+          "https://github.com/selluxhenner"
+        ]
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://www.serviweb.ch/#business",
+        "name": "Serviweb",
+        "alternateName": "Serviweb – Kevin Schmid",
+        "parentOrganization": { "@id": "https://www.serviweb.ch/#organization" },
+        "description": "Webdesign, Webentwicklung und App-Entwicklung für Restaurants, Bars und lokale Unternehmen in St. Gallen, Wil, im Toggenburg und der ganzen Ostschweiz.",
+        "url": "https://www.serviweb.ch",
+        "telephone": "+41795350603",
+        "email": "info@serviweb.ch",
+        "image": "https://www.serviweb.ch/og-image.jpg",
+        "logo": "https://www.serviweb.ch/logo.png",
+        "priceRange": "CHF 890 – CHF 9000",
+        "currenciesAccepted": "CHF",
+        "paymentAccepted": "Rechnung, Banküberweisung, TWINT",
+        "founder": { "@id": "https://www.serviweb.ch/#kevin-schmid" },
+        "knowsLanguage": ["de-CH", "de", "en"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "St. Gallen",
+          "addressCountry": "CH"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 47.4245, "longitude": 9.3767 },
+        "areaServed": [
+          { "@type": "City", "name": "St. Gallen" },
+          { "@type": "City", "name": "Wil" },
+          { "@type": "AdministrativeArea", "name": "Toggenburg" },
+          { "@type": "AdministrativeArea", "name": "Ostschweiz" },
+          { "@type": "AdministrativeArea", "name": "Thurgau" },
+          { "@type": "AdministrativeArea", "name": "Appenzell" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }],
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webdesign & Website-Entwicklung", "serviceType": "Webdesign" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App-Entwicklung (iOS & Android)", "serviceType": "App-Entwicklung" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & lokale Auffindbarkeit", "serviceType": "SEO" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografie für Web & Social Media", "serviceType": "Fotografie" } }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/serviweb.ch",
+          "https://github.com/selluxhenner"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.serviweb.ch/#kevin-schmid",
+        "name": "Kevin Schmid",
+        "jobTitle": "Webentwickler & Webdesigner",
+        "worksFor": { "@id": "https://www.serviweb.ch/#organization" },
+        "url": "https://www.serviweb.ch",
+        "knowsAbout": ["Webdesign", "React", "Next.js", "React Native", "App-Entwicklung", "SEO"],
+        "sameAs": [
+          "https://github.com/selluxhenner",
+          "https://www.instagram.com/serviweb.ch"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.serviweb.ch/#website",
+        "name": "Serviweb",
+        "alternateName": "Serviweb Webagentur Ostschweiz",
+        "url": "https://www.serviweb.ch",
+        "inLanguage": "de-CH",
+        "publisher": { "@id": "https://www.serviweb.ch/#organization" }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="root"><!--app-html--></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
