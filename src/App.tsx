@@ -12,6 +12,7 @@ import ContactPage         from './pages/ContactPage'
 import ImpressumPage       from './pages/ImpressumPage'
 import DatenschutzPage     from './pages/DatenschutzPage'
 import LocationPage        from './pages/LocationPage'
+import NotFoundPage        from './pages/NotFoundPage'
 
 import { LOCATIONS }       from './data/locations'
 
@@ -43,6 +44,9 @@ function AnimatedRoutes() {
         <Route path="/kontakt"                     element={<ContactPage />} />
         <Route path="/impressum"                   element={<ImpressumPage />} />
         <Route path="/datenschutz"                 element={<DatenschutzPage />} />
+
+        {/* Catch-all: prerendered to dist/404.html; nginx serves it with HTTP 404 */}
+        <Route path="*"                            element={<NotFoundPage />} />
       </Routes>
     </AnimatePresence>
   )

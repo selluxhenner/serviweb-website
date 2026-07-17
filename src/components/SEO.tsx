@@ -65,7 +65,7 @@ export default function SEO({
       <meta name="author" content="Kevin Schmid – Serviweb" />
       <meta name="geo.region" content="CH-SG" />
       <meta name="geo.placename" content="St. Gallen, Ostschweiz" />
-      <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'} />
+      <meta name="robots" content={noIndex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
       {fullCanonical && <link rel="canonical" href={fullCanonical} />}
 
       {/* Open Graph */}

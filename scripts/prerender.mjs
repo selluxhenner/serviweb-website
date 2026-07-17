@@ -33,7 +33,9 @@ for (const route of PRERENDER_ROUTES) {
   const outFile =
     route === '/'
       ? path.join(DIST, 'index.html')
-      : path.join(DIST, ...route.slice(1).split('/'), 'index.html')
+      : route === '/404'
+        ? path.join(DIST, '404.html') // flat file so nginx `error_page 404 /404.html` finds it
+        : path.join(DIST, ...route.slice(1).split('/'), 'index.html')
 
   mkdirSync(path.dirname(outFile), { recursive: true })
   writeFileSync(outFile, page)

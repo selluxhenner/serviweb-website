@@ -21,6 +21,7 @@ export const PRERENDER_ROUTES: string[] = [
   '/kontakt',
   '/impressum',
   '/datenschutz',
+  '/404',
 ]
 
 export function render(url: string): { html: string; helmet: HelmetServerState } {

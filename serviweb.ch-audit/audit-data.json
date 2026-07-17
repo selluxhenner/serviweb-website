@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "health_score": 82,
+    "audit_date": "2026-07-17",
+    "domain": "www.serviweb.ch",
+    "pages_crawled": 14,
+    "business_type": "Local service provider (Webagentur, service-area business, Ostschweiz CH, de-CH)",
+    "top_findings": [
+      "Soft-404: unknown URLs return HTTP 200 with homepage content (index,follow)",
+      "No Cache-Control headers on hashed static assets (483 KB JS re-fetched every visit)",
+      "Duplicate title: homepage and /webdesign-ostschweiz target the identical query",
+      "No security headers (HSTS, X-Content-Type-Options, Referrer-Policy)",
+      "Single 483 KB JS bundle, no code splitting; DCL ~2.6 s"
+    ],
+    "quick_wins": [
+      "Add Cache-Control immutable to /assets/ in nginx (5 min)",
+      "Add security headers in nginx (10 min)",
+      "Change homepage title to stop cannibalizing /webdesign-ostschweiz",
+      "Remove robots.txt Disallow for /impressum and /datenschutz (noindex already set)",
+      "Upgrade root schema Organization -> ProfessionalService/LocalBusiness"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 78,
+      "what_works": [
+        "All URL variants 301 to https://www; self-referencing canonicals on every page",
+        "Full prerendered HTML for every route (React SPA done right)",
+        "Valid sitemap.xml (11 URLs) referenced from robots.txt",
+        "Gzip enabled; TTFB ~93 ms; zero console errors"
+      ],
+      "findings": [
+        {"title": "Soft-404 on unknown URLs", "severity": "Critical", "description": "GET /does-not-exist returns 200 with full homepage HTML, robots index,follow, canonical to /. nginx SPA fallback serves index.html for any path.", "recommendation": "Restrict fallback to known routes; return HTTP 404 with a dedicated error page for unknown paths."},
+        {"title": "No Cache-Control on static assets", "severity": "High", "description": "/assets/index-*.js (483 KB) and CSS served without any Cache-Control despite content-hashed filenames.", "recommendation": "add_header Cache-Control \"public, max-age=31536000, immutable\" for /assets/."},
+        {"title": "Missing security headers", "severity": "High", "description": "No HSTS, X-Content-Type-Options, Referrer-Policy, or CSP; Server header discloses nginx/1.24.0 (Ubuntu).", "recommendation": "Add HSTS, nosniff, Referrer-Policy; server_tokens off."},
+        {"title": "robots.txt Disallow conflicts with noindex", "severity": "Medium", "description": "/impressum and /datenschutz are both Disallowed and noindexed; blocked crawling prevents Google from seeing the noindex.", "recommendation": "Remove the Disallow lines and rely on meta noindex, or make Impressum indexable for trust."},
+        {"title": "Content-Type lacks charset", "severity": "Low", "description": "text/html served without charset=utf-8 (meta tag compensates).", "recommendation": "Add charset utf-8 in nginx."}
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 80,
+      "what_works": [
+        "Unique, well-sized meta descriptions on all pages",
+        "Real prices published (CHF 890+) — strong for conversions and AI answers",
+        "Founder-led E-E-A-T: Kevin Schmid named sitewide with real client references",
+        "Local-intent pages for Ostschweiz, Wil, Toggenburg, Thurgau (650-1224 words/page)"
+      ],
+      "findings": [
+        {"title": "Duplicate title homepage vs /webdesign-ostschweiz", "severity": "High", "description": "Both use 'Webdesign & Webagentur Ostschweiz | Serviweb' — keyword cannibalization.", "recommendation": "Give homepage a brand+offer title; keep the location page on the Ostschweiz query."},
+        {"title": "No informational content", "severity": "Medium", "description": "All 11 indexable pages are commercial; no blog/guide content for top-of-funnel queries.", "recommendation": "Add /ratgeber hub with 1-2 German articles per month targeting Ostschweiz KMU questions."},
+        {"title": "Location pages share near-identical template", "severity": "Low", "description": "~850 words each with similar structure; body copy is localized but could converge.", "recommendation": "Add locally unique sections (references from the town, directions, local partners)."}
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 85,
+      "what_works": [
+        "One H1 per page, unique per page",
+        "Titles 35-55 chars, descriptions 120-160 chars",
+        "BreadcrumbList on inner pages",
+        "All location pages linked from every page footer"
+      ],
+      "findings": [
+        {"title": "og:site_name missing", "severity": "Low", "description": "OG tags otherwise complete incl. og:image (49 KB) and og:image:alt.", "recommendation": "Add og:site_name 'Serviweb'."}
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 88,
+      "what_works": [
+        "Sitewide graph: Organization, Person, Place, GeoCoordinates, OpeningHours, 4 Services with Offers",
+        "FAQPage on home and all location pages",
+        "BreadcrumbList on inner pages"
+      ],
+      "findings": [
+        {"title": "Root entity is Organization, not LocalBusiness", "severity": "Medium", "description": "Address, geo, and openingHours are present but under Organization, which is not eligible for local rich results.", "recommendation": "Change to [\"ProfessionalService\",\"LocalBusiness\"]; validate in Rich Results Test."},
+        {"title": "No review markup", "severity": "Low", "description": "No Review/AggregateRating despite real client projects.", "recommendation": "Collect reviews; add AggregateRating once 3+ exist."}
+      ]
+    },
+    {
+      "name": "Performance",
+      "score": 70,
+      "what_works": [
+        "TTFB ~93 ms",
+        "Gzip: homepage 74 KB -> 14 KB",
+        "Lazy-loaded below-fold images"
+      ],
+      "findings": [
+        {"title": "Single 483 KB JS bundle", "severity": "Medium", "description": "No code splitting; DOMContentLoaded ~2.6 s, load ~2.8 s, ~562 KB total transfer. Lab data only (no CrUX).", "recommendation": "Route-based React.lazy splitting; audit heavy deps; enable brotli."},
+        {"title": "No asset caching", "severity": "High", "description": "Same as Technical H1 — repeat visits re-fetch the bundle.", "recommendation": "Immutable Cache-Control on /assets/."}
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 95,
+      "what_works": [
+        "llms.txt with services, prices, regions, references, and answer-engine guidance",
+        "robots.txt explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended, Applebot",
+        "FAQPage schema; entity-rich prerendered content; prices in plain text"
+      ],
+      "findings": [
+        {"title": "No citable informational content", "severity": "Medium", "description": "AI engines cite guides and answers; the site only has commercial pages.", "recommendation": "Same as Content M5 — publish German guides."}
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 75,
+      "what_works": [
+        "Descriptive alt text on all images",
+        "loading=lazy on below-fold images",
+        "Reasonable JPG sizes (53-109 KB)"
+      ],
+      "findings": [
+        {"title": "No modern formats or responsive sizes", "severity": "Medium", "description": "JPG only; no WebP/AVIF, no width/height attributes, no srcset. ~500 KB of images on /projekte.", "recommendation": "Build-step WebP conversion, intrinsic dimensions, 2-size srcset."}
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {"name": "Phase 1: Critical Fixes", "timeframe": "Week 1", "items": ["Real 404 responses for unknown paths (nginx)", "Cache-Control immutable on /assets/", "Security headers (HSTS, nosniff, Referrer-Policy) + server_tokens off"]},
+      {"name": "Phase 2: High-Impact Improvements", "timeframe": "Weeks 2-3", "items": ["De-duplicate homepage title vs /webdesign-ostschweiz", "Fix robots.txt noindex conflict", "Upgrade schema root to ProfessionalService/LocalBusiness", "Verify GSC + Bing Webmaster, submit sitemap"]},
+      {"name": "Phase 3: Content & Authority", "timeframe": "Month 2", "items": ["Launch /ratgeber with 1-2 German articles/month", "Code-split JS bundle + brotli", "WebP images with dimensions and srcset"]},
+      {"name": "Phase 4: Monitoring & Iteration", "timeframe": "Ongoing", "items": ["Monthly GSC coverage + query review", "Collect reviews -> AggregateRating schema", "Re-audit in 3 months (baseline 82/100)"]}
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

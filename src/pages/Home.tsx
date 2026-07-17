@@ -49,7 +49,7 @@ export default function Home() {
       transition={{ duration: 0.3 }}
     >
       <SEO
-        title="Webdesign & Webagentur Ostschweiz"
+        title="Webdesign & App-Entwicklung aus der Ostschweiz"
         description="Serviweb – Webdesign & Webagentur aus der Ostschweiz. Kevin Schmid entwickelt moderne Websites & Apps mit React und Next.js für Unternehmen in St. Gallen, Wil & im Toggenburg. Persönlich, schnell, fair."
         canonical="/"
         faq={HOME_FAQ}

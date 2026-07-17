@@ -3,8 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /impressum
-Disallow: /datenschutz
 
 # AI / answer-engine crawlers (explicit allow for clarity)
 User-agent: GPTBot
