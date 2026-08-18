@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { hasHydrated } from '../lib/hydrated'
 import Hero     from '../components/Hero'
 import Services from '../components/Services'
 import Values   from '../components/Values'
@@ -43,7 +44,8 @@ const HOME_FAQ: Faq[] = [
 export default function Home() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      // First paint must be visible — see lib/hydrated.ts
+      initial={hasHydrated() ? { opacity: 0 } : false}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}

@@ -137,6 +137,32 @@
     ]
   }
   </script>
+  <!--
+    Safety net for a dead client bundle.
+    Framer Motion bakes its `initial` state into the prerendered markup, so
+    scroll-reveal sections ship as style="opacity:0" and only become visible
+    once React hydrates. If the bundle never boots — stale cached HTML pointing
+    at an /assets/ hash that no longer exists after a deploy, a blocking
+    extension/proxy, a JS error — the visitor sees a white page. These rules
+    force that content visible; main.tsx cancels the timer (and removes the
+    class) as soon as the app is alive, so normal loads are untouched.
+  -->
+  <style>
+    html.js-fallback #root [style*="opacity:0"] { opacity: 1 !important; }
+    html.js-fallback #root [style*="translate"] { transform: none !important; }
+  </style>
+  <script>
+    window.__swFallbackTimer = setTimeout(function () {
+      document.documentElement.classList.add('js-fallback')
+    }, 3000)
+  </script>
+  <noscript>
+    <style>
+      #root [style*="opacity:0"] { opacity: 1 !important; }
+      #root [style*="translate"] { transform: none !important; }
+    </style>
+  </noscript>
+
 </head>
 
 <body>

@@ -15,6 +15,7 @@ import LocationPage        from './pages/LocationPage'
 import NotFoundPage        from './pages/NotFoundPage'
 
 import { LOCATIONS }       from './data/locations'
+import { markHydrated }    from './lib/hydrated'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -55,6 +56,10 @@ function AnimatedRoutes() {
 // The router lives outside App: main.tsx wraps it in a BrowserRouter for the
 // client, entry-server.tsx in a StaticRouter for build-time prerendering.
 export default function App() {
+  // After the first client render the prerendered markup is live React; from
+  // here on entrance animations are safe to play (see lib/hydrated.ts).
+  useEffect(() => { markHydrated() }, [])
+
   return (
     <>
       <ScrollToTop />

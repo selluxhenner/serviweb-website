@@ -10,6 +10,7 @@ import {
   Variants,
 } from 'framer-motion'
 import Navbar from './Navbar'
+import { hasHydrated } from '../lib/hydrated'
 
 // ── Variants ──────────────────────────────────────────────────────────────────
 
@@ -177,7 +178,7 @@ export default function Hero() {
 
       <main>
         <section
-          className="relative min-h-screen flex flex-col justify-center pt-16 overflow-hidden"
+          className="relative min-h-screen flex flex-col justify-center overflow-hidden"
           style={{ background: '#FFFFFF' }}
           aria-label="Hero-Bereich"
         >
@@ -194,8 +195,8 @@ export default function Hero() {
           </div>
 
           <div className="grid-overlay" aria-hidden="true" />
+          <div className="relative h-screen z-10 w-full max-w-7xl mx-auto px-6 pt-30 md:pt-48">
 
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28">
             <motion.div
               className="max-w-3xl"
               style={shouldReduce ? {} : { y: contentY }}
@@ -203,7 +204,7 @@ export default function Hero() {
 
               {/* Personal badge */}
               <motion.div
-                initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+                initial={hasHydrated() ? { opacity: 0, y: 20, filter: 'blur(6px)' } : false}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ duration: 0.8, delay: 0.05, ease: 'easeOut' }}
                 className="inline-flex items-center gap-3 rounded-full px-4 py-2 mb-8"
@@ -225,7 +226,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Headline — one semantic <h1> spanning all three animated lines */}
-              <motion.h1 variants={curtainContainer} initial="hidden" animate="visible">
+              <motion.h1 variants={curtainContainer} initial={hasHydrated() ? 'hidden' : 'visible'} animate="visible">
                 <span style={{ display: 'block', overflow: 'hidden', marginBottom: '0.15em' }}>
                   <motion.span
                     variants={curtainLine}
@@ -256,7 +257,7 @@ export default function Hero() {
                 </span>
               </motion.h1>
 
-              <motion.div variants={contentStagger} initial="hidden" animate="visible">
+              <motion.div variants={contentStagger} initial={hasHydrated() ? 'hidden' : 'visible'} animate="visible">
 
                 <motion.p variants={fadeUp}
                   className="text-lg md:text-xl leading-relaxed max-w-2xl mb-8" style={{ color: '#64748B' }}>
@@ -295,9 +296,10 @@ export default function Hero() {
                 </motion.div>
               </motion.div>
             </motion.div>
+            </div>
 
             {/* Feature cards */}
-            <div className="mt-20 md:mt-24">
+            <div className="flex flex-col w-full max-w-7xl relative z-10 mx-auto px-6 mb-20 md:mb-28">
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -331,8 +333,6 @@ export default function Hero() {
                 />
               </motion.div>
             </div>
-
-          </div>
         </section>
       </main>
     </>

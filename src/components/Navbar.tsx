@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
+import { hasHydrated } from '../lib/hydrated'
 
 type FeaturedItem = {
   name: string; subtitle: string; initBg: string; initial: string; to?: string; href?: string
@@ -69,7 +70,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        initial={{ opacity: 0, y: -20 }}
+        initial={hasHydrated() ? { opacity: 0, y: -20 } : false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="fixed top-0 left-0 right-0 z-50"
