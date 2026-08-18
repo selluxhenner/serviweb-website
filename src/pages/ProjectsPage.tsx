@@ -11,8 +11,6 @@ import PageLayout from '../components/PageLayout'
 import SEO from '../components/SEO'
 
 import tigerImg      from '../assets/images/projects/tiger.jpg'
-import pianobarImg   from '../assets/images/projects/pianobar.jpg'
-import trinkstubeImg from '../assets/images/projects/trinkstube.jpg'
 import happytunesImg from '../assets/images/projects/happytunes.jpg'
 import visionWilImg  from '../assets/images/projects/vision-wil.jpg'
 import skiserviceImg from '../assets/images/projects/skiservice-joel.jpg'
@@ -27,12 +25,12 @@ import noctraImg     from '../assets/images/projects/noctra.jpg'
 import artsImg       from '../assets/images/projects/arts.jpg'
 import grillkammerImg from '../assets/images/projects/grillkammer.jpg'
 import rebstockImg   from '../assets/images/projects/rebstock.jpg'
-import swissMeatImg  from '../assets/images/projects/swiss-meat-resti.png'
 import djOstschweizImg from '../assets/images/projects/dj-ostschweiz.jpg'
 import ironandcutImg from '../assets/images/projects/iron&edge.jpg'
 import kapitel4Img   from '../assets/images/projects/kapitel4.jpg'
 import terrassenBistroImg from '../assets/images/projects/bistro-zwingen.jpg'
 import saentisKebabImg from '../assets/images/projects/säntis-kebab.jpg'
+import gertisImg     from '../assets/images/projects/gertis-rosengarten.jpg'
 
 
 
@@ -85,18 +83,6 @@ const WEBSITES = [
     desc: 'Moderne Website mit umfassendem Menü, Galerie und Reservierungsfunktion.',
     features: ['Menü-Übersicht', 'Bildergalerie', 'Öffnungszeiten', 'Kontakt & Standort'],
     image: tigerImg,
-  },
-  {
-    name: 'ILGE Piano Bar', subtitle: 'Bar & Event Location', url: 'ilge-pianobar.ch', category: 'Bar',
-    desc: 'Elegante Website mit Event-Kalender, Getränkekarte und stimmungsvoller Galerie.',
-    features: ['Event-Bereich', 'Getränkekarte', 'Galerie', 'Social Media Integration'],
-    image: pianobarImg,
-  },
-  {
-    name: 'Trinkstube zum Hartz', subtitle: 'Traditionelle Bar', url: 'trinkstubezumhartz.ch', category: 'Bar',
-    desc: 'Authentische Website für die traditionsreiche Bar mit gemütlichem Design.',
-    features: ['Über uns', 'Öffnungszeiten', 'Kontaktformular', 'Standort-Integration'],
-    image: trinkstubeImg,
   },
   {
     name: 'DJ Happy Tunes', subtitle: 'DJ & Entertainment', url: 'djhappytunes.com', category: 'Entertainment',
@@ -166,15 +152,6 @@ const TEMPLATES = [
     image: rebstockImg,
   },
   {
-    name: 'Swiss Meat Resti',
-    subtitle: 'Premium Steakhouse Showcase',
-    url: 'swiss-meat-resti.serviweb.ch',
-    category: 'Restaurant',
-    desc: 'Kraftvolles und hochwertiges Restaurantdesign mit Fokus auf Branding.',
-    features: ['Premium Design', 'Food Showcase', 'Dark Theme', 'Animationen'],
-    image: swissMeatImg,
-  },
-  {
   name: 'DJ Ostschweiz',
   subtitle: 'Event & Hochzeit DJ Showcase',
   url: 'dj-ostschweiz.serviweb.ch',
@@ -186,7 +163,7 @@ const TEMPLATES = [
 {
   name: 'Iron&Edge',
   subtitle: 'Bold Barbershop Showcase',
-  url: 'ironandedge.serviweb.ch',
+  url: 'iron-edge.serviweb.ch',
   category: 'Barbershop',
   desc: 'Maskulines und modernes Showcase-Design für Barber- und Lifestyle-Brands.',
   features: ['Dark Theme', 'Premium Look', 'Smooth Animationen', 'Responsive Design'],
@@ -195,7 +172,7 @@ const TEMPLATES = [
 {
   name: 'Kapitel 4',
   subtitle: 'Modernes Café & Bar Design',
-  url: 'kapitel4.serviweb.ch',
+  url: 'kapitel-4.serviweb.ch',
   category: 'Restaurant',
   desc: 'Atmosphärisches Showcase-Design mit Fokus auf Interior, Drinks und Branding.',
   features: ['Editorial Layout', 'Animationen', 'Galerie', 'Modernes UI'],
@@ -205,7 +182,7 @@ const TEMPLATES = [
 {
   name: 'Terrassen Bistro',
   subtitle: 'Modernes Outdoor Bistro Design',
-  url: 'terrassen-bistro.serviweb.ch',
+  url: 'bistro-zwingen.serviweb.ch',
   category: 'Restaurant',
   desc: 'Elegantes Bistro-Design mit sonniger Terrasse, moderner Typografie und stilvoller Atmosphäre.',
   features: ['Tischreservierung', 'Speisekarte', 'Galerie', 'Modernes UI'],
@@ -214,11 +191,20 @@ const TEMPLATES = [
 {
   name: 'Säntis Kebab',
   subtitle: 'Kebab & Pizzeria Website',
-  url: 'säntis-kebab.serviweb.ch',
+  url: 'saentis-kebab.serviweb.ch',
   category: 'Restaurant',
   desc: 'Moderne und schnelle Restaurant-Website mit Fokus auf Bestellungen und mobile Nutzer.',
   features: ['Speisekarte', 'Kontakt & Standort', 'Mobile Optimiert', 'Call-to-Action'],
   image: saentisKebabImg,
+},
+{
+  name: "Gerti's Rosengarten",
+  subtitle: 'Grill & Restaurant – Flawil',
+  url: 'gertis-rosengarten.serviweb.ch',
+  category: 'Restaurant',
+  desc: 'Warmes Restaurant-Design mit Fokus auf Grillkunst, Menü und Gastfreundschaft seit 1985.',
+  features: ['Speisekarte', 'Über uns', 'Kontakt & Standort', 'Responsive Design'],
+  image: gertisImg,
 },
 ]
 

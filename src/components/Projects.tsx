@@ -10,8 +10,6 @@ import {
 
 // ── Image imports ──────────────────────────────────────────────────────────────
 import tigerImg      from '../assets/images/projects/tiger.jpg'
-import pianobarImg   from '../assets/images/projects/pianobar.jpg'
-import trinkstubeImg from '../assets/images/projects/trinkstube.jpg'
 import happytunesImg from '../assets/images/projects/happytunes.jpg'
 import visionWilImg  from '../assets/images/projects/vision-wil.jpg'
 import skiserviceImg from '../assets/images/projects/skiservice-joel.jpg'
@@ -74,18 +72,6 @@ const WEBSITES = [
     desc: 'Moderne Website mit umfassendem Menü, Galerie und Reservierungsfunktion.',
     features: ['Menü-Übersicht', 'Bildergalerie', 'Öffnungszeiten', 'Kontakt & Standort'],
     category: 'Restaurant', image: tigerImg,
-  },
-  {
-    name: 'ILGE Piano Bar', subtitle: 'Bar & Event Location', url: 'ilge-pianobar.ch',
-    desc: 'Elegante Website mit Event-Kalender, Getränkekarte und stimmungsvoller Galerie.',
-    features: ['Event-Bereich', 'Getränkekarte', 'Galerie', 'Social Media Integration'],
-    category: 'Bar', image: pianobarImg,
-  },
-  {
-    name: 'Trinkstube zum Hartz', subtitle: 'Traditionelle Bar', url: 'trinkstubezumhartz.ch',
-    desc: 'Authentische Website für die traditionsreiche Bar mit gemütlichem Design.',
-    features: ['Über uns', 'Öffnungszeiten', 'Kontaktformular', 'Standort-Integration'],
-    category: 'Bar', image: trinkstubeImg,
   },
   {
     name: 'DJ Happy Tunes', subtitle: 'DJ & Entertainment', url: 'djhappytunes.com',
