@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 
 import Home                from './pages/Home'
 import ProjectsPage        from './pages/ProjectsPage'
@@ -28,8 +27,18 @@ function ScrollToTop() {
 function AnimatedRoutes() {
   const location = useLocation()
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+    // No <AnimatePresence> here, deliberately.
+    //
+    // It used to wrap these routes with mode="wait", which renders ONLY the
+    // outgoing page until that page reports its exit animation finished. When
+    // that report never arrived — Framer Motion drives it from
+    // requestAnimationFrame, and the page components are nested several levels
+    // below AnimatePresence rather than being its direct motion children — the
+    // incoming page was never mounted. The result was a permanently white
+    // screen with the old page still in the DOM at opacity:0, and the URL
+    // already changed. A cosmetic cross-fade is not worth a failure mode that
+    // can strand a visitor on a blank page, so routes now render directly.
+    <Routes location={location}>
         <Route path="/"                            element={<Home />} />
         <Route path="/projekte"                    element={<ProjectsPage />} />
         <Route path="/projekte/vocafy"             element={<VocafyPage />} />
@@ -49,7 +58,6 @@ function AnimatedRoutes() {
         {/* Catch-all: prerendered to dist/404.html; nginx serves it with HTTP 404 */}
         <Route path="*"                            element={<NotFoundPage />} />
       </Routes>
-    </AnimatePresence>
   )
 }
 

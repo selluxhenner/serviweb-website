@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-import { hasHydrated } from '../lib/hydrated'
 import Hero     from '../components/Hero'
 import Services from '../components/Services'
 import Values   from '../components/Values'
@@ -43,13 +41,8 @@ const HOME_FAQ: Faq[] = [
 
 export default function Home() {
   return (
-    <motion.div
-      // First paint must be visible — see lib/hydrated.ts
-      initial={hasHydrated() ? { opacity: 0 } : false}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    // Plain <div> — see PageLayout / App.tsx for why routes no longer animate.
+    <div>
       <SEO
         title="Webdesign & App-Entwicklung aus der Ostschweiz"
         description="Serviweb – Webdesign & Webagentur aus der Ostschweiz. Kevin Schmid entwickelt moderne Websites & Apps mit React und Next.js für Unternehmen in St. Gallen, Wil & im Toggenburg. Persönlich, schnell, fair."
@@ -64,6 +57,6 @@ export default function Home() {
       <FAQ items={HOME_FAQ} title="Häufige Fragen zu Serviweb" />
       <CTA />
       <Footer />
-    </motion.div>
+    </div>
   )
 }
